@@ -1,0 +1,48 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .updates-grid,
+    .initiatives-grid,
+    .events-grid,
+    .community-grid,
+    .focus-items {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .newsletter-title {
+        margin: 10px 0;
+    }
+    
+    .issue-info {
+        text-align: center;
+    }
+}
+
+/* Animation for expanding sections */
+.expandable {
+    transition: all 0.3s ease;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        font-size: 12pt;
+    }
+    
+    .container {
+        box-shadow: none;
+    }
+    
+    button, .learn-more {
+        display: none !important;
+    }
+    
+    .expanded-content {
+        display: block !important;
+    }
+}

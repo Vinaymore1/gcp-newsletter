@@ -1,0 +1,16 @@
+{
+  "name": "gcp-newsletter",
+  "version": "1.0.0",
+  "description": "Blue Altair GCP Newsletter Generator",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "nodemon --watch src --ext hbs,json,js,css --exec npm run build"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
