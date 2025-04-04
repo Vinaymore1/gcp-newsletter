@@ -42,12 +42,6 @@
       "details": "The Blue Lab project - CICD pipeline for Apigee API Proxy deployment is a powerful analytics solution built on Google Cloud's BigQuery and Looker. This initiative enables enterprises to aggregate, process, and analyze vast amounts of structured and unstructured data in real-time, facilitating data-driven decision-making. By integrating AI and ML-powered analytics, the platform provides actionable insights, predictive modeling, and automated reporting capabilities. Organizations can leverage this solution to enhance customer experience, optimize business operations, and uncover hidden trends. With advanced security and governance features, businesses can maintain compliance with industry standards while maximizing the value of their data assets."
     },
     {
-      "title": "Blue Labs - The Bluepedia Page",
-      "description": "For updated look for project lists and teams! Reach out to your respective leads if you want to be part of any of the above.",
-      "image": "https://bluelabs.com/wp-content/uploads/2024/03/og-image.png",
-      "details": "Blue Labs - The Bluepedia Page is a cutting-edge initiative focused on enhancing cloud security using Google's industry-leading security primitives. This framework is designed to help enterprises implement end-to-end security measures, including zero-trust architectures, advanced encryption mechanisms, and threat detection systems. By incorporating IAM (Identity and Access Management), VPC Service Controls, and security policy enforcement, organizations can protect sensitive data, mitigate risks, and ensure compliance with regulatory requirements. GCP Newsletter Hosting on GCP Cloud Run also integrates AI-driven anomaly detection and automated security incident response, ensuring robust protection against evolving cyber threats."
-    },
-    {
       "title": "GCP Newsletter Hosting on GCP Cloud Run",
       "description": "Implementing comprehensive security measures using Google's security primitives and best practices.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJkVOBDw9EN9UcJt0hCTzuM5VfRa3BePiY6g&s",
@@ -178,12 +172,6 @@
       "achievement": "Achieved Google Cloud Professional Cloud Developer certification",
       "date": "15th February 2025",
       "image": "https://ca.slack-edge.com/T03K4UPRDE1-U04JVV3PN06-30b387a17488-192"
-    },
-    {
-      "name": "Zarqua Qazi",
-      "achievement": "Completed The \"HashiCorp Certified - Terraform-Associate",
-      "date": "30th March 2025",
-      "image": "https://ca.slack-edge.com/T03K4UPRDE1-U04MJJC13KN-8b233b596a87-192"
     },
     {
       "name": "Zarqua Qazi",
