@@ -1,9 +1,9 @@
 {
-  "issueNumber": 2,
+  "issueNumber": 1,
   "issuedate": "2025-03-31T18:30:00.000Z",
   "currentYear": 2025,
   "leadershipMessage": {
-    "title": "Welcome Welcome to the first edition of Blue Altair's Google Cloud Platform Community newsletter!",
+    "title": "Welcome to the first edition of Blue Altair's Google Cloud Platform Community newsletter!",
     "content": "As proud Google Cloud Partners, we have successfully delivered numerous projects leveraging GCP's cutting-edge technologies. To strengthen this partnership, we emphasize continuous learning, certifications, and hands-on experience with real-world projects. This newsletter is designed to share valuable insights, foster collaboration, expand GCP product knowledge, highlight noteworthy blogs, offer training opportunities, and drive innovation within the GCP ecosystem. This month, we've packed in the latest trends, must-know updates, and a few surprises just for you. Whether you're here for industry news, expert tips, or a dose of inspiration, there's something for everyone!"
   },
   "featuredUpdates": [
@@ -100,16 +100,58 @@
   ],
   "events": [
     {
-      "title": "Google Cloud Datasheet: Blue Altair",
-      "description": "Google Cloud services enable enterprises with all these desirable benefits in their digital excellence journey...",
-      "link": "https://www.bluealtair.com/hubfs/New%20Site%202023/Documents/Blue%20Altair%20-%20Google%20Cloud%20Partner%20Datasheet.pdf?hsLang=en",
-      "buttonText": true
+      "title": "Generative AI training:Live",
+      "description": "",
+      "link": "",
+      "buttonText": ""
     },
     {
-      "title": "TT Apigee Datasheet: Blue Altair",
-      "description": "Apigee is a key driver for expediting digital transformation. Blue Altair helps clients leverage Apigee's capabilities to....",
-      "link": "https://www.bluealtair.com/hubfs/New%20Site%202023/Documents/Blue%20Altair%20-%20Apigee%20Partner%20Datasheet.pdf?hsLang=en",
-      "buttonText": true
+      "title": "Best of Next '25",
+      "description": "",
+      "link": "",
+      "buttonText": ""
+    },
+    {
+      "title": "GDG Pune: International Women's Day 2025",
+      "description": "",
+      "link": "",
+      "buttonText": ""
+    },
+    {
+      "title": "GDG Cloud Bengaluru: IWD WTM GDGC Bengaluru",
+      "description": "",
+      "link": "",
+      "buttonText": ""
+    },
+    {
+      "title": "Live Classes-Partner CA",
+      "description": "",
+      "link": "",
+      "buttonText": ""
+    },
+    {
+      "title": "Build with AI: GDG Cloud Bangalore Edition",
+      "description": "",
+      "link": "",
+      "buttonText": ""
+    },
+    {
+      "title": "Microsoft Azure Virtual Training Day: Develop Your Own Custom Copilots with Azure AI",
+      "description": "",
+      "link": "",
+      "buttonText": ""
+    },
+    {
+      "title": "AWS Discovery Days",
+      "description": "",
+      "link": "",
+      "buttonText": ""
+    },
+    {
+      "title": "Snowflake Data for breakfast Event",
+      "description": "",
+      "link": "",
+      "buttonText": ""
     }
   ],
   "certifications": [
