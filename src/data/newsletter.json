@@ -19,27 +19,37 @@
     },
     {
       "title": "Cloud Storage Cost Optimization",
-      "description": "New intelligent tiering options automatically move data.",
-      "details": "The new intelligent tiering options in Cloud Storage automatically analyze access patterns and move data to the most cost-effective storage class without impacting performance. This feature helps businesses optimize storage costs by ensuring frequently accessed data remains in high-performance tiers while infrequently used data is transitioned to lower-cost archival storage. By eliminating the need for manual intervention, organizations can focus on their core operations while benefiting from seamless cost savings and enhanced storage efficiency."
+      "description": "Google Cloud Storage offers cost optimization features like Object Lifecycle ..",
+      "details": "Google Cloud Storage offers features to optimize costs, such as Object Lifecycle Management, which automates actions like setting Time to Live (TTL) or transitioning objects to cheaper storage classes. Coldline and Archive Storage provide significant savings for infrequently accessed data, though with longer retrieval times. Additionally, Efficient Data Compression reduces storage space, helping organizations further cut costs while maintaining scalability"
     },
     {
       "title": "Vertex AI Agent Builder",
-      "description": "Build, customize, and deploy AI agents with enterprise-grade security.",
-      "details": "Vertex AI Agent Builder provides enterprise-grade security and governance controls, ensuring that AI agents operate within a secure and compliant framework. It includes robust access management, data encryption, and monitoring capabilities to protect sensitive information and prevent unauthorized usage. Businesses can customize AI models while maintaining strict adherence to regulatory standards, ensuring responsible AI deployment. With built-in audit trails and policy enforcement mechanisms, organizations can track AI interactions, detect anomalies, and mitigate risks effectively. This comprehensive approach makes AI adoption more scalable, accessible, and trustworthy for enterprises looking to integrate intelligent automation into their operations."
+      "description": "Build and deploy enterprise ready generative AI experiences",
+      "details": "Vertex AI Agent Builder offers enterprise-grade security and governance controls, ensuring AI agents are deployed within a secure, compliant framework. It integrates Google Cloud’s Identity and Access Management (IAM), robust data encryption (both at rest and in transit), and comprehensive monitoring capabilities via Cloud Monitoring to safeguard sensitive information. Businesses can customize AI models while adhering to industry regulations, facilitated by Google Cloud’s compliance tools and private AI capabilities."
+    },
+    {
+      "title": "Apigee Spaces",
+      "description": "Identity-based isolation and grouping of API resources within an Apigee organization",
+      "details": "Apigee Spaces enables identity-based isolation and grouping of API resources within an Apigee organization. Apigee Spaces allows you to have granular IAM control over access to your API proxies, shared flows, and API products. Developers can create multiple Spaces within the same organization for different teams, development projects, or environments and set IAM controls for each Space. Any API resources created under a Space will inherit the IAM policies applied to that Space."
+    },
+    {
+      "title": "Gemini Code Assist",
+      "description": "AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle",
+      "details": "Gemini Code Assist offers AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle. Developers can use Gemini Code Assist in their IDE (such as VS Code, JetBrains IDEs like IntelliJ and PyCharm, or Android Studio) for AI-powered coding assistance in many popular languages. It provides code completions as developers write their code, generates full functions or code blocks from comments, generates unit tests, and assists with debugging, understanding, and documenting code.\r\nGemini Code Assist provides contextualized responses to prompts, including source citations regarding which documentation and code samples it used to generate its responses."
     }
   ],
   "initiatives": [
     {
       "title": "Blue Lab project - Apigee Migration Accelerator",
-      "description": "Apigee Migration Accelerator solutions with a focus on microservices architecture.",
+      "description": "A new Python-based Apigee migration accelerator to support cross-platform data migration across different Apigee environments",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY6ifK6f2qRYyNCAPSwg9AFPN0jENtVzTRyw&s",
-      "details": "Project Phoenix is an ambitious initiative aimed at modernizing outdated legacy systems by leveraging GCP's robust cloud-native solutions. This project focuses on transforming monolithic architectures into highly scalable, resilient, and efficient microservices-based solutions. By utilizing Kubernetes, serverless functions, and containerized environments, organizations can achieve greater flexibility, improve operational efficiency, and reduce overall maintenance costs. Additionally, the initiative incorporates DevOps best practices, continuous integration/continuous deployment (CI/CD) pipelines, and automated monitoring to ensure seamless system performance. Through this transformation, businesses can enhance agility, accelerate innovation, and future-proof their IT infrastructure."
+      "details": "A new Python-based Apigee migration accelerator to support cross-platform data migration across different Apigee environments, including Edge to Hybrid and Hybrid to Hybrid. The tool provides end-to-end support for exporting data from the source organization, importing it into the target organization, and generating detailed reports based on the downloaded data. It is designed to streamline the migration process while maintaining consistency and traceability across environments"
     },
     {
       "title": "Blue Lab project - CICD pipeline for Apigee API Proxy deployment",
-      "description": "Building a unified data platform leveraging BigQuery and Looker for real-time analytics and reporting.",
+      "description": "Demonstrate the process of deploying an API proxy on Apigee using Cloud Build and a GitLab repository..",
       "image": "https://media.licdn.com/dms/image/v2/C4E12AQGuJIc5Wsdvrg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1549389176142?e=2147483647&v=beta&t=L_l6_CPdqz2GSvM1S07Lys6ZTwDymiYb7hMLCxuSSnY",
-      "details": "The Blue Lab project - CICD pipeline for Apigee API Proxy deployment is a powerful analytics solution built on Google Cloud's BigQuery and Looker. This initiative enables enterprises to aggregate, process, and analyze vast amounts of structured and unstructured data in real-time, facilitating data-driven decision-making. By integrating AI and ML-powered analytics, the platform provides actionable insights, predictive modeling, and automated reporting capabilities. Organizations can leverage this solution to enhance customer experience, optimize business operations, and uncover hidden trends. With advanced security and governance features, businesses can maintain compliance with industry standards while maximizing the value of their data assets."
+      "details": "In this proof of concept (POC), we aim to demonstrate the process of deploying an API proxy on Apigee using Cloud Build and a GitLab repository. The solution leverages a configuration JSON file to capture inputs, streamlining the deployment process. Additionally, an approval mechanism has been integrated, ensuring that the deployment is triggered only after the necessary build approval is granted. This POC not only enhances deployment efficiency but also adds an extra layer of control and security, maintaining high-quality standards throughout the process."
     },
     {
       "title": "GCP Newsletter Hosting on GCP Cloud Run",
@@ -63,89 +73,89 @@
   "learnings": [
     {
       "title": "Enhancing Your API Lifecycle With Artificial Intelligence",
-      "description": "This blog will throw light on the impact of AI on the emerging trends in API Management and Governance....",
+      "description": "This blog will throw light on the impact ...",
       "link": "https://www.bluealtair.com/blog/enhancing-your-api-lifecycle-with-artificial-intelligence",
-      "buttonText": true
+      "buttonText": "View More"
     },
     {
       "title": "Amplifying the Power of Google Ads with BigQuery",
-      "description": "Integrating Google Ads data with BigQuery, Google's managed data warehouse, enables advertisers to ..",
+      "description": "Integrating Google Ads data with BigQuery...",
       "link": "https://www.bluealtair.com/blog/amplifying-the-power-of-google-ads-with-bigquery",
-      "buttonText": true
+      "buttonText": "View More"
     },
     {
       "title": "Redefining Connectivity with Google Cloud's Application Integration",
-      "description": "Google now has an answer with the release of their Application Integration iPaaS solution ..",
+      "description": "Google now has an answer with ...",
       "link": "https://www.bluealtair.com/blog/google-cloud-application-integration-solutions",
-      "buttonText": true
+      "buttonText": "View More"
     },
     {
       "title": "Google Cloud Datasheet: Blue Altair",
-      "description": "Google Cloud services enable enterprises with all these desirable benefits in their digital excellence journey...",
+      "description": "Google Cloud services enable enterprises ...",
       "link": "https://www.bluealtair.com/hubfs/New%20Site%202023/Documents/Blue%20Altair%20-%20Google%20Cloud%20Partner%20Datasheet.pdf?hsLang=en",
-      "buttonText": true
+      "buttonText": "View More"
     },
     {
       "title": "Apigee Datasheet: Blue Altair",
-      "description": "Apigee is a key driver for expediting digital transformation. Blue Altair helps clients leverage Apigee's capabilities to....",
+      "description": "Apigee is a key driver for expediting ...",
       "link": "https://www.bluealtair.com/hubfs/New%20Site%202023/Documents/Blue%20Altair%20-%20Apigee%20Partner%20Datasheet.pdf?hsLang=en",
-      "buttonText": true
+      "buttonText": "View More"
     }
   ],
   "events": [
     {
       "title": "Generative AI training:Live",
-      "description": "",
-      "link": "",
-      "buttonText": ""
+      "description": "These stand-alone classes are ...",
+      "link": "https://rsvp.withgoogle.com/events/partner-learning/gen-ai-schedule",
+      "buttonText": "Join Now"
     },
     {
       "title": "Best of Next '25",
-      "description": "",
-      "link": "",
-      "buttonText": ""
+      "description": "Google Cloud's global flagship moment ..",
+      "link": "https://cloudonair.withgoogle.com/events/apac-best-of-next25?utm_campaign=FY25-Q1-APAC-APA32178-onlineevent-er-best-of-next-25-24145&utm_medium=email&utm_source=partner&utm_content=apac_bon25_invite_partner_internal&utm_content=&mkt_tok=ODA4LUdKVy0zMTQAAAGZjkTnJG0L5l9b5gSb3dxJmOLROdyR9GfoJUwjLHdZPdmB0xxVKf0Y635fwruGtBMrMC28UMOqmtrfU5dTdU2bvyTdHy9Xa9qC6VW4IQm5JGZfuVZOZGI",
+      "buttonText": "Join Now"
     },
     {
       "title": "GDG Pune: International Women's Day 2025",
-      "description": "",
-      "link": "",
-      "buttonText": ""
+      "description": "Infosys Phase 2 - FC1, Gate 1,...",
+      "link": "https://gdg.community.dev/events/details/google-gdg-pune-presents-international-womens-day-2025/cohost-gdg-pune",
+      "buttonText": "Get Tickets."
     },
     {
       "title": "GDG Cloud Bengaluru: IWD WTM GDGC Bengaluru",
-      "description": "",
-      "link": "",
-      "buttonText": ""
+      "description": "GeekyAnts Training Tower, Bannerghatta ...",
+      "link": "https://gdg.community.dev/events/details/google-gdg-pune-presents-international-womens-day-2025/cohost-gdg-pune",
+      "buttonText": "Get Tickets."
     },
     {
       "title": "Live Classes-Partner CA",
-      "description": "",
-      "link": "",
-      "buttonText": ""
+      "description": "Google Certification live Classes for ...",
+      "link": "https://rsvp.withgoogle.com/events/partner-learning/partner-certification-academy?utm_source=quarterly+subscriber+newsletter&utm_medium=RSVP&utm_campaign=Q22024",
+      "buttonText": "Join Now"
     },
     {
       "title": "Build with AI: GDG Cloud Bangalore Edition",
-      "description": "",
-      "link": "",
-      "buttonText": ""
+      "description": "Join GDG Cloud Bengaluru for Build...",
+      "link": "https://gdg.community.dev/events/details/google-gdg-pune-presents-international-womens-day-2025/cohost-gdg-pune",
+      "buttonText": "Get Tickets."
     },
     {
       "title": "Microsoft Azure Virtual Training Day: Develop Your Own Custom Copilots with Azure AI",
-      "description": "",
-      "link": "",
-      "buttonText": ""
+      "description": "Adapt your skills and master the tools ...",
+      "link": "https://msevents.microsoft.com/event?id=1148586904",
+      "buttonText": "Register Now"
     },
     {
       "title": "AWS Discovery Days",
-      "description": "",
-      "link": "",
-      "buttonText": ""
+      "description": "Kickstart your cloud journey with AWS ...",
+      "link": "https://meeting.zoho.com/meeting/register?sessionId=1061898686",
+      "buttonText": "Register Now"
     },
     {
       "title": "Snowflake Data for breakfast Event",
-      "description": "",
-      "link": "",
-      "buttonText": ""
+      "description": "Your future depends on using data in ...",
+      "link": "https://www.snowflake.com/events/data-for-breakfast/virtual-apac/",
+      "buttonText": "Register Now"
     }
   ],
   "certifications": [

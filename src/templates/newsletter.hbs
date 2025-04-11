@@ -9,502 +9,503 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
-    
+
     {{!-- Style for email newsletter --}}
-    <style>
+    {{!-- <style>
         body {
-    font-family: "Nunito", sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f5f5f5;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1360px;
-    margin: 0 auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    min-height: 100vh;
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "left right"
-        "footer footer"
-        "copyright copyright";
-        ;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: auto 1fr auto auto;
-}
-
-/* Header Styles */
-.header {
-    grid-area: header;
-    background: linear-gradient(135deg, rgb(0, 0, 134), rgb(251, 164, 157));
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.left-column {
-    grid-area: left;
-    padding: 8px;
-}
-
-.right-column {
-    grid-area: right;
-    padding: 8px;
-}
-
-/* Remove existing float/width declarations */
-.left-column,
-.right-column {
-    float: none;
-    display: block;
-}
-
-/* Footer Styles */
-.footer {
-    grid-area: footer;
-    background: #f8f9fa;
-    padding: 20px;
-    border-top: 1px solid #eaeaea;
-    display: flex;
-}
-
-/* Rest of your existing styles remain unchanged */
-.header-logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    height: auto;
-}
-
-.newsletter-title {
-    font-size: 26px;
-    font-weight: bold;
-    color: white;
-    font-family: "Nunito", sans-serif;
-    margin-right: 40px;
-}
-
-.issue-info {
-    font-size: 14px;
-    color: white;
-    text-align: right;
-}
-
-.section {
-    padding: 8px;
-    padding-left: 15px;
-    border-bottom: 1px solid #eaeaea;
-    border-left: 1px solid #eaeaea;
-}
-.section-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #202124;
-}
-
-/* Leadership Message */
-.leadership-message {
-    background-color: #f8f9fb;
-    padding: 8px;
-    margin-bottom: 10px;
-}
-
-.leader-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.leader-avatar {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.leader-name {
-    font-weight: bold;
-}
-
-.leader-quote {
-    font-style: italic;
-    margin-left: 42px;
-    color: #5f6368;
-    font-size: small;
-}
-
-.updates-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.update-card {
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    padding: 8px;
-    position: relative;
-}
-
-.update-icon {
-    width: 24px;
-    height: 24px;
-    background-color: #4285f4;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.update-icon span {
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.update-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.update-description {
-    font-size: 14px;
-    color: #5f6368;
-    margin-bottom: 10px;
-}
-
-.learn-more {
-    color: #4285f4;
-    text-decoration: none;
-    font-size: 14px;
-    display: flex;
-    /* align-items: center; */
-}
-
-.learn-more:after {
-    content: "›";
-    margin-left: 5px;
-}
-
-/* Initiatives */
-.initiatives-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.initiative-card {
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.initiative-image {
-    width: 100%;
-    height: 120px;
-    background-color: #e8eaed;
-    object-fit: cover;
-}
-
-.initiative-content {
-    padding: 8px;
-}
-
-.initiative-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.initiative-description {
-    font-size: 14px;
-    color: #5f6368;
-}
-
-/* Security Updates */
-.security-alert {
-    background-color: #fdeded;
-    border-radius: 8px;
-    padding: 8px;
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-}
-
-.alert-icon {
-    color: #ea4335;
-    margin-right: 15px;
-}
-
-.alert-content {
-    flex-grow: 1;
-}
-
-.alert-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.alert-description {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.alert-button {
-    background-color: #ea4335;
-    color: white;
-    border: none;
-    padding: 6px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 11px;
-}
-
-/* Technical Insights */
-.tip-container {
-    margin-bottom: 10px;
-}
-
-.tip-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.tip-icon {
-    color: #fbbc04;
-    margin-right: 10px;
-    font-size: 20px;
-}
-
-.tip-title {
-    font-weight: bold;
-}
-
-.tip-content {
-    font-size: 14px;
-    color: #5f6368;
-    margin-bottom: 10px;
-}
-
-/* Learning & Events */
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-.event-card {
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    padding: 8px;
-}
-
-.event-icon {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #4285f4;
-}
-
-.training-icon {
-    color: #34a853;
-}
-
-.event-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.event-description {
-    font-size: 14px;
-    color: #5f6368;
-    margin-bottom: 10px;
-}
-
-.event-button {
-    border: none;
-    padding: 6px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 11px;
-    color: white;
-    background-color: #4285f4;
-}
-
-.training-button {
-    background-color: #34a853;
-}
-
-.section {
-    max-width: 900px;
-    margin: auto;
-}
-
-.spotlight-container {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(150px, 1fr));
-    /* Ensures max 2 columns */
-    gap: 10px;
-}
-
-.spotlight-card {
-    background-color: #f1f8e9;
-    border-radius: 8px;
-    padding: 8px;
-    display: flex;
-    /* Change from grid to flex for better alignment */
-    /* align-items: center; */
-    box-sizing: border-box;
-}
-
-.spotlight-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-
-.spotlight-content {
-    flex-grow: 1;
-}
-
-.spotlight-name {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.spotlight-achievement {
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .spotlight-container {
-        grid-template-columns: 1fr;
-        /* Stack cards in a single column on small screens */
-    }
-}
-
-
-/* Community & Collaboration */
-.community-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.community-card {
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    padding: 8px;
-    display: flex;
-    justify-content: center;            
-}
-
-.shoutouts-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.shoutout-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.shoutout-team {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.shoutout-contribution {
-    font-size: 14px;
-    color: #5f6368;
-}
-
-.ideas-card {
-    text-align: center;
-}
-
-.ideas-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.ideas-description {
-    font-size: 14px;
-    color: #5f6368;
-    margin-bottom: 15px;
-}
-
-.ideas-button {
-    background-color: #4285f4;
-    color: white;
-    border: none;
-    padding: 7px 9px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-}
-
-/* Next Month Focus */
-.focus-items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-.focus-item {
-    display: flex;
-    align-items: flex-start;
-}
-
-.focus-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-    color: white;
-}
-
-.cloud-icon {
-    background-color: #4285f4;
-}
-
-.security-icon {
-    background-color: #34a853;
-}
-
-.focus-content {
-    flex-grow: 1;
-}
-
-.focus-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.focus-description {
-    font-size: 14px;
-    color: #5f6368;
-}
-
-/* Footer
+            font-family: "Nunito", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1360px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "left right"
+                "footer footer"
+                "copyright copyright";
+            ;
+            grid-template-columns: 70% 30%;
+            grid-template-rows: auto 1fr auto auto;
+        }
+
+        /* Header Styles */
+        .header {
+            grid-area: header;
+            background: linear-gradient(135deg, rgb(0, 0, 134), rgb(251, 164, 157));
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .left-column {
+            grid-area: left;
+            padding: 8px;
+        }
+
+        .right-column {
+            grid-area: right;
+            padding: 8px;
+        }
+
+        /* Remove existing float/width declarations */
+        .left-column,
+        .right-column {
+            float: none;
+            display: block;
+        }
+
+        /* Footer Styles */
+        .footer {
+            grid-area: footer;
+            background: #f8f9fa;
+            padding: 20px;
+            border-top: 1px solid #eaeaea;
+            display: flex;
+        }
+
+        /* Rest of your existing styles remain unchanged */
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: auto;
+        }
+
+        .newsletter-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+            font-family: "Nunito", sans-serif;
+            margin-right: 40px;
+        }
+
+        .issue-info {
+            font-size: 14px;
+            color: white;
+            text-align: right;
+        }
+
+        .section {
+            padding: 8px;
+            padding-left: 15px;
+            border-bottom: 1px solid #eaeaea;
+            border-left: 1px solid #eaeaea;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #202124;
+        }
+
+        /* Leadership Message */
+        .leadership-message {
+            background-color: #f8f9fb;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .leader-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .leader-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .leader-name {
+            font-weight: bold;
+        }
+
+        .leader-quote {
+            font-style: italic;
+            margin-left: 42px;
+            color: #5f6368;
+            font-size: small;
+        }
+
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .update-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 8px;
+            position: relative;
+        }
+
+        .update-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #4285f4;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .update-icon span {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .update-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .update-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        .learn-more {
+            color: #4285f4;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            /* align-items: center; */
+        }
+
+        .learn-more:after {
+            content: "›";
+            margin-left: 5px;
+        }
+
+        /* Initiatives */
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .initiative-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .initiative-image {
+            width: 100%;
+            height: 120px;
+            background-color: #e8eaed;
+            object-fit: cover;
+        }
+
+        .initiative-content {
+            padding: 8px;
+        }
+
+        .initiative-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .initiative-description {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        /* Security Updates */
+        .security-alert {
+            background-color: #fdeded;
+            border-radius: 8px;
+            padding: 8px;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .alert-icon {
+            color: #ea4335;
+            margin-right: 15px;
+        }
+
+        .alert-content {
+            flex-grow: 1;
+        }
+
+        .alert-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .alert-description {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .alert-button {
+            background-color: #ea4335;
+            color: white;
+            border: none;
+            padding: 6px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+        }
+
+        /* Technical Insights */
+        .tip-container {
+            margin-bottom: 10px;
+        }
+
+        .tip-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .tip-icon {
+            color: #fbbc04;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .tip-title {
+            font-weight: bold;
+        }
+
+        .tip-content {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        /* Learning & Events */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .event-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        .event-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #4285f4;
+        }
+
+        .training-icon {
+            color: #34a853;
+        }
+
+        .event-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .event-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        .event-button {
+            border: none;
+            padding: 6px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            color: white;
+            background-color: #4285f4;
+        }
+
+        .training-button {
+            background-color: #34a853;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .spotlight-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(150px, 1fr));
+            /* Ensures max 2 columns */
+            gap: 10px;
+        }
+
+        .spotlight-card {
+            background-color: #f1f8e9;
+            border-radius: 8px;
+            padding: 8px;
+            display: flex;
+            /* Change from grid to flex for better alignment */
+            /* align-items: center; */
+            box-sizing: border-box;
+        }
+
+        .spotlight-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .spotlight-content {
+            flex-grow: 1;
+        }
+
+        .spotlight-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .spotlight-achievement {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .spotlight-container {
+                grid-template-columns: 1fr;
+                /* Stack cards in a single column on small screens */
+            }
+        }
+
+
+        /* Community & Collaboration */
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .community-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .shoutouts-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .shoutout-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .shoutout-team {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .shoutout-contribution {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        .ideas-card {
+            text-align: center;
+        }
+
+        .ideas-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .ideas-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 15px;
+        }
+
+        .ideas-button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 7px 9px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        /* Next Month Focus */
+        .focus-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .focus-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .focus-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+        }
+
+        .cloud-icon {
+            background-color: #4285f4;
+        }
+
+        .security-icon {
+            background-color: #34a853;
+        }
+
+        .focus-content {
+            flex-grow: 1;
+        }
+
+        .focus-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .focus-description {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        /* Footer
 .footer {
     background-color: #f8f9fa;
     max-width: fit-content;
@@ -514,104 +515,104 @@
     align-items: center;
 } */
 
-.feedback-section {
-    flex-grow: 1;
-}
+        .feedback-section {
+            flex-grow: 1;
+        }
 
-.feedback-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+        .feedback-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-.feedback-description {
-    font-size: 14px;
-    color: #5f6368;
-    margin-bottom: 10px;
-}
+        .feedback-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
 
-.feedback-button {
-    background-color: transparent;
-    border: 1px solid #5f6368;
-    color: #5f6368;
-    padding: 6px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 11px;
-}
+        .feedback-button {
+            background-color: transparent;
+            border: 1px solid #5f6368;
+            color: #5f6368;
+            padding: 6px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+        }
 
-.social-section {
-    display: flex;
-    align-items: center;
-}
+        .social-section {
+            display: flex;
+            align-items: center;
+        }
 
-.social-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-right: 10px;
-}
+        .social-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
 
-.social-icons {
-    display: flex;
-    position: relative;
-}
+        .social-icons {
+            display: flex;
+            position: relative;
+        }
 
-.social-icon {
-    width: 24px;
-    height: 24px;
-    /* margin-left: 15px; */
-    color: #5f6368;
-}
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            /* margin-left: 15px; */
+            color: #5f6368;
+        }
 
-.copyright {
-    grid-area: copyright;
-    font-size: 12px;
-    color: #5f6368;
-    text-align: center;
-    display: block;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 8px;
-    background: linear-gradient(135deg, rgb(251, 164, 157),rgb(0, 0, 134));
-    color: white;
-}
+        .copyright {
+            grid-area: copyright;
+            font-size: 12px;
+            color: #5f6368;
+            text-align: center;
+            display: block;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 8px;
+            background: linear-gradient(135deg, rgb(251, 164, 157), rgb(0, 0, 134));
+            color: white;
+        }
 
-.anchor {
-    display: inline-block;
-}
+        .anchor {
+            display: inline-block;
+        }
 
-.social-media-icons{
-    margin-right: 8px;
-    margin-left: 8px;
-}
+        .social-media-icons {
+            margin-right: 8px;
+            margin-left: 8px;
+        }
 
-.view-more {
-    display: inline-block;
-    color: #0073e6;
-    font-weight: bold;
-    text-decoration: none;
-    margin-left: 5px;
-    transition: color 0.3s ease-in-out;
-}
+        .view-more {
+            display: inline-block;
+            color: #0073e6;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 5px;
+            transition: color 0.3s ease-in-out;
+        }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+        /* Responsive Styles */
+        @media (max-width: 768px) {
 
-    .updates-grid,
-    .initiatives-grid,
-    .events-grid,
-    .community-grid,
-    .focus-items {
-        grid-template-columns: 1fr;
-    }
-}
-    </style>
+            .updates-grid,
+            .initiatives-grid,
+            .events-grid,
+            .community-grid,
+            .focus-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style> --}}
 
 
     {{!-- Style for main newsletter --}}
 
-    {{!-- <style>
+    <style>
         /* Global Styles */
         body {
             font-family: "Nunito", sans-serif;
@@ -666,22 +667,22 @@
 
         /* Content Sections */
         .section {
-            padding: 20px;
+            padding: 2px;
             border-bottom: 1px solid #eaeaea;
         }
 
         .section-title {
             font-size: 18px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 2px;
             color: #202124;
         }
 
         /* Leadership Message */
         .leadership-message {
             background-color: #f8f9fb;
-            padding: 15px;
-            margin-bottom: 20px;
+            padding: 10px;
+            margin-bottom: 5px;
         }
 
         .leader-info {
@@ -713,14 +714,15 @@
         .updates-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 10px;
         }
 
         .update-card {
             border: 1px solid #eaeaea;
             border-radius: 8px;
-            padding: 15px;
+            padding: 4px;
             position: relative;
+            margin: 4px;
         }
 
         .update-icon {
@@ -762,6 +764,10 @@
         .learn-more:after {
             content: "›";
             margin-left: 5px;
+        }
+
+        .learn-more extend {
+            position: fixed;
         }
 
         /* Initiatives */
@@ -916,7 +922,7 @@
         /* Learning & Events */
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 20px;
         }
 
@@ -965,7 +971,7 @@
         .section {
             max-width: 800px;
             /* Adjust as needed */
-            margin: auto;
+            margin: 2px;
         }
 
         .spotlight-container {
@@ -1228,12 +1234,12 @@
         .section {
             padding: 20px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 2px;
         }
 
         .section-title {
             font-size: 24px;
-            margin-bottom: 30px;
+            margin-bottom: 7px;
             color: #333;
         }
 
@@ -1246,7 +1252,7 @@
         .update-card {
             border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 20px;
+            padding: 5px;
             position: relative;
             transition: all 0.3s ease;
         }
@@ -1354,10 +1360,13 @@
         .extend {
             cursor: pointer;
         }
-    </style> --}}
+    </style>
 </head>
 
 {{!-- body for email newsletter --}}
+
+{{!--
+
 <body>
     <div class="container">
         <!-- Header -->
@@ -1406,17 +1415,19 @@
 
             <!-- Learning & Events Section -->
             <div class="section">
-            <div class="section-title">Learning & Events</div>
-            <div class="events-grid">
-                {{#each events}}
-                <div class="event-card">
-                    <div class="event-title">{{title}}</div>
-                    <div class="event-description">{{description}}</div>
-                    <a href="{{link}}" class="event-button {{#if isTraining}}training-button{{/if}}">{{buttonText}}</a>
+                <div class="section-title">Learning & Events</div>
+                <div class="events-grid">
+                    {{#each events}}
+                    <div class="event-card">
+                        <div class="event-title">{{title}}</div>
+                        <div class="event-description">{{description}}</div>
+                        {{!-- <a href="{{link}}"
+                            class="event-button {{#if isTraining}}training-button{{/if}}">{{buttonText}}</a> --}}
+                        {{!--
+                    </div>
+                    {{/each}}
                 </div>
-                {{/each}}
             </div>
-        </div>
 
             <!-- Certification Spotlight Section -->
             <div class="section">
@@ -1457,7 +1468,8 @@
                 <div class="section-title">Leadership Message</div>
                 <div class="leadership-message">
                     <div class="leader-info">
-                        <img src="{{leadershipMessage.avatar}}" alt="{{leadershipMessage.name}}" class="leader-avatar">
+                        <img src="https://avatars.slack-edge.com/2025-02-10/8440320241681_b1bee1b06a87b9d59ae0_72.png"
+                            alt="{{leadershipMessage.name}}" class="leader-avatar">
                         <div class="leader-name">{{leadershipMessage.name}}</div>
                     </div>
                     <div class="leader-quote">
@@ -1530,9 +1542,11 @@
         </div>
     </div>
 </body>
+--}}
 
-{{!-- Style for main newsletter --}}
-{{!--
+{{!-- body for main newsletter --}}
+
+
 <body>
     <div class="container">
         <!-- Header -->
@@ -1567,7 +1581,7 @@
             <div class="updates-grid">
                 {{#each featuredUpdates}}
                 <div class="update-card expandable">
-                    <div class="update-icon"><span>{{add @index 1}}</span></div>
+                    {{!-- <div class="update-icon"><span>{{add @index 1}}</span></div> --}}
                     <div class="update-title">{{title}}</div>
                     <div class="update-description">{{description}}</div>
                     <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
@@ -1646,12 +1660,14 @@
         <!-- Learning & Events Section -->
         <div class="section">
             <div class="section-title">Learning & Events</div>
-            <div style="font-size: medium; font-family: nunito; font-style: italic; font-weight: bold;">Learnings :
+
+            <!-- Learnings Section -->
+            {{#if learnings.length}}
+            <div style="font-size: medium; font-family: nunito; font-style: italic; font-weight: bold;">🎓 Learnings:
             </div>
             <div class="events-grid">
                 {{#each learnings}}
                 <div class="event-card">
-                    <div class="event-icon training-icon">🎓</div>
                     <div class="event-title">{{title}}</div>
                     <div class="event-description">{{description}}</div>
                     <a href="{{link}}">
@@ -1660,13 +1676,17 @@
                 </div>
                 {{/each}}
             </div>
+            {{/if}}
+
+            <!-- Events Section -->
+            {{#if events.length}}
             <div
                 style="margin-top: 12px; font-size: medium; font-family: nunito; font-style: italic; font-weight: bold;">
-                Events :</div>
+                🗓️ Events:
+            </div>
             <div class="events-grid">
                 {{#each events}}
                 <div class="event-card">
-                    <div class="event-icon">🗓️</div>
                     <div class="event-title">{{title}}</div>
                     <div class="event-description">{{description}}</div>
                     <a href="{{link}}">
@@ -1675,6 +1695,7 @@
                 </div>
                 {{/each}}
             </div>
+            {{/if}}
         </div>
 
         <!-- Certification Spotlight Section -->
@@ -1737,8 +1758,12 @@
             <div class="feedback-section">
                 <div class="feedback-title">Feedback & Suggestions</div>
                 <div class="feedback-description">{{feedbackText}}</div>
-                <a href="https://www.bluealtair.com/contact-us"><button class="feedback-button">Provide
-                        Feedback</button></a>
+                <a href="mailto:gcp.community@bluealtair.com">
+                    <button class="feedback-button">
+                        Provide Feedback
+                    </button>
+                </a>
+
             </div>
             <div class="social-section">
                 <div class="social-title">Stay Connected</div>
@@ -1826,6 +1851,6 @@
             });
         }
     </script>
-</body> --}}
+</body>
 
 </html>
