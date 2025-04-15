@@ -1,6 +1,6 @@
 {
   "issueNumber": 1,
-  "issuedate": "2025-03-31T18:30:00.000Z",
+  "issuedate": "April 2025",
   "currentYear": 2025,
   "leadershipMessage": {
     "title": "Welcome to the first edition of Blue Altair's Google Cloud Platform Community newsletter!",
@@ -8,34 +8,44 @@
   },
   "featuredUpdates": [
     {
+      "title": "Apigee Spaces",
+      "description": "Identity-based isolation and grouping of API resources within an Apigee organization",
+      "details": "Apigee Spaces enables identity-based isolation and grouping of API resources within an Apigee organization. Apigee Spaces allows you to have granular IAM control over access to your API proxies, shared flows, and API products. Developers can create multiple Spaces within the same organization for different teams, development projects, or environments and set IAM controls for each Space. Any API resources created under a Space will inherit the IAM policies applied to that Space.\nFor more details please refer to below link: \nhttps://cloud.google.com/apigee/docs/api-platform/system-administration/spaces/apigee-spaces-overview"
+    },
+    {
+      "title": "Gemini Code Assist",
+      "description": "AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle",
+      "details": "Gemini Code Assist offers AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle. Developers can use Gemini Code Assist in their IDE (such as VS Code, JetBrains IDEs like IntelliJ and PyCharm, or Android Studio) for AI-powered coding assistance in many popular languages. It provides code completions as developers write their code, generates full functions or code blocks from comments, generates unit tests, and assists with debugging, understanding, and documenting code.\nGemini Code Assist provides contextualized responses to prompts, including source citations regarding which documentation and code samples it used to generate its responses.\nFor more details please refer to below link: \nhttps://cloud.google.com/gemini/docs/codeassist/overview"
+    },
+    {
+      "title": "BigQuery ML Enhancements",
+      "description": "New machine learning capabilities in BigQuery with TensorFlow integration.",
+      "details": "BigQuery ML now supports advanced machine learning capabilities, including forecasting models and integration with TensorFlow. These enhancements allow data scientists and analysts to build and deploy predictive models directly within BigQuery, leveraging its scalable infrastructure for faster insights. Businesses can use these capabilities to make data-driven decisions, improve demand forecasting, and enhance AI-driven applications without requiring extensive machine learning expertise. The seamless integration with TensorFlow also enables the use of custom deep learning models, expanding the potential for sophisticated analytics and automation.\nFor more details please refer to below link:\nhttps://cloud.google.com/bigquery/docs/bqml-introduction"
+    },
+    {
+      "title": "Anywhere Cache",
+      "description": "Accelerate GCS access using globally distributed caching infrastructure",
+      "details": "Anywhere Cache is a built-in performance optimization in Google Cloud Storage that reduces latency and improves read speeds by serving frequently accessed objects from cache nodes located across Google’s global edge and regional network. This means users and applications can access data faster, regardless of their geographical location. Unlike traditional CDNs, Anywhere Cache is natively integrated into GCS and doesn’t require separate configuration. It’s ideal for media streaming, global machine learning pipelines, analytics dashboards, and gaming workloads. While it offers significant performance gains, it’s designed for read-heavy workloads and doesn't offer direct cache management.\nFor more details please refer to below link:\nhttps://cloud.google.com/storage/docs/anywhere-cache"
+    },
+    {
+      "title": "Cloud Storage Cost Optimization",
+      "description": "Google Cloud Storage offers cost optimization features like Object Lifecycle ..",
+      "details": "Google Cloud Storage offers features to optimize costs, such as Object Lifecycle Management, which automates actions like setting Time to Live (TTL) or transitioning objects to cheaper storage classes. Coldline and Archive Storage provide significant savings for infrequently accessed data, though with longer retrieval times. Additionally, Efficient Data Compression reduces storage space, helping organizations further cut costs while maintaining scalability.\nFor more details please refer to below link:\nhttps://cloud.google.com/architecture/framework/cost-optimization"
+    },
+    {
+      "title": "Vertex AI Agent Builder",
+      "description": "Build and deploy enterprise ready generative AI experiences",
+      "details": "Vertex AI Agent Builder offers enterprise-grade security and governance controls, ensuring AI agents are deployed within a secure, compliant framework. It integrates Google Cloud’s Identity and Access Management (IAM), robust data encryption (both at rest and in transit), and comprehensive monitoring capabilities via Cloud Monitoring to safeguard sensitive information. Businesses can customize AI models while adhering to industry regulations, facilitated by Google Cloud’s compliance tools and private AI capabilities.\nFor more details please refer to below link:\nhttps://cloud.google.com/products/agent-builder"
+    },
+    {
       "title": "New Feature Release: Cloud Run for Anthos",
       "description": "Introducing advanced capabilities for containerized applications.",
       "details": "BigQuery ML now supports advanced machine learning capabilities, including forecasting models and integration with TensorFlow. These enhancements allow data scientists and analysts to build and deploy predictive models directly within BigQuery, leveraging its scalable infrastructure for faster insights. Businesses can use these capabilities to make data-driven decisions, improve demand forecasting, and enhance AI-driven applications without requiring extensive machine learning expertise. The seamless integration with TensorFlow also enables the use of custom deep learning models, expanding the potential for sophisticated analytics and automation."
     },
     {
-      "title": "BigQuery ML Enhancements",
-      "description": "New machine learning capabilities in BigQuery with TensorFlow integration.",
-      "details": "BigQuery ML now supports advanced machine learning capabilities, including forecasting models and integration with TensorFlow. These enhancements allow data scientists and analysts to build and deploy predictive models directly within BigQuery, leveraging its scalable infrastructure for faster insights. Businesses can use these capabilities to make data-driven decisions, improve demand forecasting, and enhance AI-driven applications without requiring extensive machine learning expertise. The seamless integration with TensorFlow also enables the use of custom deep learning models, expanding the potential for sophisticated analytics and automation."
-    },
-    {
-      "title": "Cloud Storage Cost Optimization",
-      "description": "Google Cloud Storage offers cost optimization features like Object Lifecycle ..",
-      "details": "Google Cloud Storage offers features to optimize costs, such as Object Lifecycle Management, which automates actions like setting Time to Live (TTL) or transitioning objects to cheaper storage classes. Coldline and Archive Storage provide significant savings for infrequently accessed data, though with longer retrieval times. Additionally, Efficient Data Compression reduces storage space, helping organizations further cut costs while maintaining scalability"
-    },
-    {
-      "title": "Vertex AI Agent Builder",
-      "description": "Build and deploy enterprise ready generative AI experiences",
-      "details": "Vertex AI Agent Builder offers enterprise-grade security and governance controls, ensuring AI agents are deployed within a secure, compliant framework. It integrates Google Cloud’s Identity and Access Management (IAM), robust data encryption (both at rest and in transit), and comprehensive monitoring capabilities via Cloud Monitoring to safeguard sensitive information. Businesses can customize AI models while adhering to industry regulations, facilitated by Google Cloud’s compliance tools and private AI capabilities."
-    },
-    {
-      "title": "Apigee Spaces",
-      "description": "Identity-based isolation and grouping of API resources within an Apigee organization",
-      "details": "Apigee Spaces enables identity-based isolation and grouping of API resources within an Apigee organization. Apigee Spaces allows you to have granular IAM control over access to your API proxies, shared flows, and API products. Developers can create multiple Spaces within the same organization for different teams, development projects, or environments and set IAM controls for each Space. Any API resources created under a Space will inherit the IAM policies applied to that Space."
-    },
-    {
-      "title": "Gemini Code Assist",
-      "description": "AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle",
-      "details": "Gemini Code Assist offers AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle. Developers can use Gemini Code Assist in their IDE (such as VS Code, JetBrains IDEs like IntelliJ and PyCharm, or Android Studio) for AI-powered coding assistance in many popular languages. It provides code completions as developers write their code, generates full functions or code blocks from comments, generates unit tests, and assists with debugging, understanding, and documenting code.\r\nGemini Code Assist provides contextualized responses to prompts, including source citations regarding which documentation and code samples it used to generate its responses."
+      "title": "Agent 2 Agent communication Open source",
+      "description": "An interoperability protocol that enables AI agents to communicate and collaborate seamlessly",
+      "details": "Agent2Agent (A2A) is an interoperability protocol designed to enable seamless communication and collaboration between AI agents, regardless of their underlying framework or vendor. It simplifies the development of complex, multi-agent systems by supporting structured interactions. Key capabilities include capability discovery through standardized JSON-based agent cards, task management protocols for efficient coordination, and dynamic collaboration through message, context, and artifact exchange. A2A has gained significant industry traction, with over 50 partners such as Atlassian, Salesforce, MongoDB, and ServiceNow backing the initiative. This growing adoption highlights the industry's commitment to building interoperable and scalable AI ecosystems.\nFor more details please refer to below link:\nhttps://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
     }
   ],
   "initiatives": [
@@ -116,28 +126,10 @@
       "buttonText": "Join Now"
     },
     {
-      "title": "GDG Pune: International Women's Day 2025",
-      "description": "Infosys Phase 2 - FC1, Gate 1,...",
-      "link": "https://gdg.community.dev/events/details/google-gdg-pune-presents-international-womens-day-2025/cohost-gdg-pune",
-      "buttonText": "Get Tickets."
-    },
-    {
-      "title": "GDG Cloud Bengaluru: IWD WTM GDGC Bengaluru",
-      "description": "GeekyAnts Training Tower, Bannerghatta ...",
-      "link": "https://gdg.community.dev/events/details/google-gdg-pune-presents-international-womens-day-2025/cohost-gdg-pune",
-      "buttonText": "Get Tickets."
-    },
-    {
       "title": "Live Classes-Partner CA",
       "description": "Google Certification live Classes for ...",
       "link": "https://rsvp.withgoogle.com/events/partner-learning/partner-certification-academy?utm_source=quarterly+subscriber+newsletter&utm_medium=RSVP&utm_campaign=Q22024",
       "buttonText": "Join Now"
-    },
-    {
-      "title": "Build with AI: GDG Cloud Bangalore Edition",
-      "description": "Join GDG Cloud Bengaluru for Build...",
-      "link": "https://gdg.community.dev/events/details/google-gdg-pune-presents-international-womens-day-2025/cohost-gdg-pune",
-      "buttonText": "Get Tickets."
     },
     {
       "title": "Microsoft Azure Virtual Training Day: Develop Your Own Custom Copilots with Azure AI",
@@ -149,12 +141,6 @@
       "title": "AWS Discovery Days",
       "description": "Kickstart your cloud journey with AWS ...",
       "link": "https://meeting.zoho.com/meeting/register?sessionId=1061898686",
-      "buttonText": "Register Now"
-    },
-    {
-      "title": "Snowflake Data for breakfast Event",
-      "description": "Your future depends on using data in ...",
-      "link": "https://www.snowflake.com/events/data-for-breakfast/virtual-apac/",
       "buttonText": "Register Now"
     }
   ],

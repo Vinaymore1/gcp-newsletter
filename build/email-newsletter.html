@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
 
-    {{!-- Style for email newsletter --}}
     <style>
         body {
             font-family: "Nunito", sans-serif;
@@ -625,8 +624,8 @@
             </div>
             <div class="newsletter-title">GCP Newsletter</div>
             <div class="issue-info">
-                Issue #{{issueNumber}}<br>
-                {{issuedate}}
+                Issue #1<br>
+                April 2025
             </div>
         </div>
 
@@ -635,13 +634,46 @@
             <div class="section">
                 <div class="section-title">Featured Updates & Announcements</div>
                 <div class="updates-grid">
-                    {{#each featuredUpdates}}
                     <div class="update-card">
-                        <div class="update-title">{{title}}</div>
-                        <div class="update-description">{{description}}</div>
-                        <a href="{{link}}" class="learn-more">Learn more</a>
+                        <div class="update-title">Apigee Spaces</div>
+                        <div class="update-description">Identity-based isolation and grouping of API resources within an Apigee organization</div>
+                        <a href="" class="learn-more">Learn more</a>
                     </div>
-                    {{/each}}
+                    <div class="update-card">
+                        <div class="update-title">Gemini Code Assist</div>
+                        <div class="update-description">AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle</div>
+                        <a href="" class="learn-more">Learn more</a>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-title">BigQuery ML Enhancements</div>
+                        <div class="update-description">New machine learning capabilities in BigQuery with TensorFlow integration.</div>
+                        <a href="" class="learn-more">Learn more</a>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-title">Anywhere Cache</div>
+                        <div class="update-description">Accelerate GCS access using globally distributed caching infrastructure</div>
+                        <a href="" class="learn-more">Learn more</a>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-title">Cloud Storage Cost Optimization</div>
+                        <div class="update-description">Google Cloud Storage offers cost optimization features like Object Lifecycle ..</div>
+                        <a href="" class="learn-more">Learn more</a>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-title">Vertex AI Agent Builder</div>
+                        <div class="update-description">Build and deploy enterprise ready generative AI experiences</div>
+                        <a href="" class="learn-more">Learn more</a>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-title">New Feature Release: Cloud Run for Anthos</div>
+                        <div class="update-description">Introducing advanced capabilities for containerized applications.</div>
+                        <a href="" class="learn-more">Learn more</a>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-title">Agent 2 Agent communication Open source</div>
+                        <div class="update-description">An interoperability protocol that enables AI agents to communicate and collaborate seamlessly</div>
+                        <a href="" class="learn-more">Learn more</a>
+                    </div>
                 </div>
             </div>
 
@@ -649,15 +681,27 @@
             <div class="section">
                 <div class="section-title">Blue Altair's GCP Initiatives</div>
                 <div class="initiatives-grid">
-                    {{#each initiatives}}
                     <div class="initiative-card">
-                        <img src="{{image}}" alt="{{title}}" class="initiative-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q&#x3D;tbn:ANd9GcQY6ifK6f2qRYyNCAPSwg9AFPN0jENtVzTRyw&amp;s" alt="Blue Lab project - Apigee Migration Accelerator" class="initiative-image">
                         <div class="initiative-content">
-                            <div class="initiative-title">{{title}}</div>
-                            <div class="initiative-description">{{description}}</div>
+                            <div class="initiative-title">Blue Lab project - Apigee Migration Accelerator</div>
+                            <div class="initiative-description">A new Python-based Apigee migration accelerator to support cross-platform data migration across different Apigee environments</div>
                         </div>
                     </div>
-                    {{/each}}
+                    <div class="initiative-card">
+                        <img src="https://media.licdn.com/dms/image/v2/C4E12AQGuJIc5Wsdvrg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1549389176142?e&#x3D;2147483647&amp;v&#x3D;beta&amp;t&#x3D;L_l6_CPdqz2GSvM1S07Lys6ZTwDymiYb7hMLCxuSSnY" alt="Blue Lab project - CICD pipeline for Apigee API Proxy deployment" class="initiative-image">
+                        <div class="initiative-content">
+                            <div class="initiative-title">Blue Lab project - CICD pipeline for Apigee API Proxy deployment</div>
+                            <div class="initiative-description">Demonstrate the process of deploying an API proxy on Apigee using Cloud Build and a GitLab repository..</div>
+                        </div>
+                    </div>
+                    <div class="initiative-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q&#x3D;tbn:ANd9GcTJkVOBDw9EN9UcJt0hCTzuM5VfRa3BePiY6g&amp;s" alt="GCP Newsletter Hosting on GCP Cloud Run" class="initiative-image">
+                        <div class="initiative-content">
+                            <div class="initiative-title">GCP Newsletter Hosting on GCP Cloud Run</div>
+                            <div class="initiative-description">Implementing comprehensive security measures using Google&#x27;s security primitives and best practices.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -665,14 +709,26 @@
             <div class="section">
                 <div class="section-title">Learning & Events</div>
                 <div class="events-grid">
-                    {{#each events}}
                     <div class="event-card">
-                        <div class="event-title">{{title}}</div>
-                        <div class="event-description">{{description}}</div>
-                        {{!-- <a href="{{link}}"
-                            class="event-button {{#if isTraining}}training-button{{/if}}">{{buttonText}}</a> --}}
+                        <div class="event-title">Generative AI training:Live</div>
+                        <div class="event-description">These stand-alone classes are ...</div>
                     </div>
-                    {{/each}}
+                    <div class="event-card">
+                        <div class="event-title">Best of Next &#x27;25</div>
+                        <div class="event-description">Google Cloud&#x27;s global flagship moment ..</div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-title">Live Classes-Partner CA</div>
+                        <div class="event-description">Google Certification live Classes for ...</div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-title">Microsoft Azure Virtual Training Day: Develop Your Own Custom Copilots with Azure AI</div>
+                        <div class="event-description">Adapt your skills and master the tools ...</div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-title">AWS Discovery Days</div>
+                        <div class="event-description">Kickstart your cloud journey with AWS ...</div>
+                    </div>
                 </div>
             </div>
 
@@ -680,15 +736,41 @@
             <div class="section">
                 <div class="section-title">Certification Spotlight</div>
                 <div class="spotlight-container">
-                    {{#each certifications}}
                     <div class="spotlight-card">
-                        <img src="{{image}}" alt="{{name}}" class="spotlight-avatar">
+                        <img src="https://ca.slack-edge.com/T03K4UPRDE1-U03PG9GQ4Q2-955a3e821083-192" alt="Ayush Sagore" class="spotlight-avatar">
                         <div class="spotlight-content">
-                            <div class="spotlight-name">{{name}}</div>
-                            <div class="spotlight-achievement">{{achievement}}</div>
+                            <div class="spotlight-name">Ayush Sagore</div>
+                            <div class="spotlight-achievement">Achieved Google Cloud Professional Cloud Developer certification</div>
                         </div>
                     </div>
-                    {{/each}}
+                    <div class="spotlight-card">
+                        <img src="https://ca.slack-edge.com/T03K4UPRDE1-U04KS8G78M6-4758a86d2fab-512" alt="Ankit Agade" class="spotlight-avatar">
+                        <div class="spotlight-content">
+                            <div class="spotlight-name">Ankit Agade</div>
+                            <div class="spotlight-achievement">Achieved Google Cloud Professional Cloud Developer certification</div>
+                        </div>
+                    </div>
+                    <div class="spotlight-card">
+                        <img src="https://ca.slack-edge.com/T03K4UPRDE1-U03MDTK8WAX-911162a3843c-192" alt="Abdul Qudir Tinwala" class="spotlight-avatar">
+                        <div class="spotlight-content">
+                            <div class="spotlight-name">Abdul Qudir Tinwala</div>
+                            <div class="spotlight-achievement">Achieved Google Cloud Professional Cloud Developer certification</div>
+                        </div>
+                    </div>
+                    <div class="spotlight-card">
+                        <img src="https://ca.slack-edge.com/T03K4UPRDE1-U04JVV3PN06-30b387a17488-192" alt="Disha baghele" class="spotlight-avatar">
+                        <div class="spotlight-content">
+                            <div class="spotlight-name">Disha baghele</div>
+                            <div class="spotlight-achievement">Achieved Google Cloud Professional Cloud Developer certification</div>
+                        </div>
+                    </div>
+                    <div class="spotlight-card">
+                        <img src="https://ca.slack-edge.com/T03K4UPRDE1-U04MJJC13KN-8b233b596a87-192" alt="Zarqua Qazi" class="spotlight-avatar">
+                        <div class="spotlight-content">
+                            <div class="spotlight-name">Zarqua Qazi</div>
+                            <div class="spotlight-achievement">Completed The &quot;HashiCorp Certified - Terraform-Associate</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -697,14 +779,42 @@
                 <div class="section-title">Community & Collaboration</div>
                 <div class="card-title">Shoutouts & Kudos !!</div>
                 <div class="community-grid">
-                    {{#each shoutouts}}
                     <div class="community-card">
                         <div>
-                            <div class="shoutout-team">{{name}}</div>
-                            <div class="shoutout-contribution">{{contribution}}</div>
+                            <div class="shoutout-team">Prasad Walke</div>
+                            <div class="shoutout-contribution">For creating Apigee Accelerator for Apigee API Proxy and Artifact migration from One Organization (Edge/Hybrid) to another Organization.</div>
                         </div>
                     </div>
-                    {{/each}}
+                    <div class="community-card">
+                        <div>
+                            <div class="shoutout-team">Arjun Ashok</div>
+                            <div class="shoutout-contribution">For helping us with initial design of the newsletter.</div>
+                        </div>
+                    </div>
+                    <div class="community-card">
+                        <div>
+                            <div class="shoutout-team">Vinay More</div>
+                            <div class="shoutout-contribution">for creating newsletter Framework using HTML, CSS and JS.</div>
+                        </div>
+                    </div>
+                    <div class="community-card">
+                        <div>
+                            <div class="shoutout-team">Parthesh Patel</div>
+                            <div class="shoutout-contribution">for creating newsletter Framework using HTML, CSS and JS.</div>
+                        </div>
+                    </div>
+                    <div class="community-card">
+                        <div>
+                            <div class="shoutout-team">Sanket Choughule</div>
+                            <div class="shoutout-contribution">Creating POC for CICD pipeline building using GCP Cloud Build &amp; Repository.</div>
+                        </div>
+                    </div>
+                    <div class="community-card">
+                        <div>
+                            <div class="shoutout-team">Supriya Badgujar</div>
+                            <div class="shoutout-contribution">For helping BA Team members for GCP certification and notify about GCP events.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -715,12 +825,10 @@
                 <div class="section-title">Leadership Message</div>
                 <div class="leadership-message">
                     <div class="leader-info">
-                        {{!-- <img src="https://avatars.slack-edge.com/2025-02-10/8440320241681_b1bee1b06a87b9d59ae0_72.png"
-                            alt="{{leadershipMessage.name}}" class="leader-avatar"> --}}
-                        <div class="leader-name">{{leadershipMessage.name}}</div>
+                        <div class="leader-name"></div>
                     </div>
                     <div class="leader-quote">
-                        "{{leadershipMessage.content}}"
+                        "As proud Google Cloud Partners, we have successfully delivered numerous projects leveraging GCP&#x27;s cutting-edge technologies. To strengthen this partnership, we emphasize continuous learning, certifications, and hands-on experience with real-world projects. This newsletter is designed to share valuable insights, foster collaboration, expand GCP product knowledge, highlight noteworthy blogs, offer training opportunities, and drive innovation within the GCP ecosystem. This month, we&#x27;ve packed in the latest trends, must-know updates, and a few surprises just for you. Whether you&#x27;re here for industry news, expert tips, or a dose of inspiration, there&#x27;s something for everyone!"
                     </div>
                 </div>
             </div>
@@ -730,8 +838,8 @@
                 <div class="section-title">Security Updates</div>
                 <div class="security-alert">
                     <div class="alert-content">
-                        <div class="alert-title">{{securityUpdate.title}}</div>
-                        <div class="alert-description">{{securityUpdate.description}}</div>
+                        <div class="alert-title">Critical Security Advisory</div>
+                        <div class="alert-description">Important updates regarding Cloud Identity and Access Management. All teams must update IAM policies by March 15th to comply with new security standards.</div>
                         <button class="alert-button">View Details</button>
                     </div>
                 </div>
@@ -744,23 +852,11 @@
                     <div class="tip-header">
                         <div class="tip-title">Tip of the Month</div>
                     </div>
-                    <div class="tip-content">{{technicalTip}}</div>
+                    <div class="tip-content">Optimize your Cloud Storage costs with these best practices. Implementing lifecycle policies can automatically transition objects to lower-cost storage classes or delete them when they&#x27;re no longer needed.</div>
                 </div>
             </div>
 
             <!-- Next Month's Focus Section -->
-            {{!-- <div class="section">
-                <div class="section-title">Next Month's Focus</div>
-                <div class="focus-items">
-                    {{#each nextMonthFocus}}
-                    <div class="focus-item">
-                        <div class="focus-content">
-                            <div class="focus-title">{{title}}</div>
-                            <div class="focus-description">{{description}}</div>
-                        </div>
-                    </div>
-                    {{/each}}
-                </div> --}}
             </div>
         </div>
 
@@ -768,24 +864,28 @@
         <div class="footer">
             <div class="feedback-section">
                 <div class="feedback-title">Feedback & Suggestions</div>
-                <div class="feedback-description">{{feedbackText}}</div>
+                <div class="feedback-description">Your insights matter to us! Share your thoughts on our newsletter content, design, and delivery frequency. We&#x27;re constantly working to improve your experience and provide content that matters most to you. Have ideas for future topics? Let us know what you&#x27;d like to see in upcoming editions.</div>
                 <button class="feedback-button">Provide Feedback</button>
                 <button class="ideas-button">Share Ideas</button>
             </div>
             <div class="social-section">
                 <div class="social-title">Stay Connected</div>
                 <div class="social-icons">
-                    {{#each socialLinks}}
-                    <div class="social-media-icons"><a class="anchor" href="{{url}}"><img src="{{image}}"
+                    <div class="social-media-icons"><a class="anchor" href="https://www.linkedin.com/company/blue-altair"><img src="./linkedin.png"
                                 class="social-icon"></a></div>
-                    {{/each}}
+                    <div class="social-media-icons"><a class="anchor" href="https://x.com/bluealtair1"><img src="./twitter.png"
+                                class="social-icon"></a></div>
+                    <div class="social-media-icons"><a class="anchor" href="https://www.facebook.com/bluealtair1/"><img src="./fb.png"
+                                class="social-icon"></a></div>
+                    <div class="social-media-icons"><a class="anchor" href="https://www.instagram.com/bluealtair1/#"><img src="./ig.png"
+                                class="social-icon"></a></div>
                 </div>
             </div>
         </div>
 
         <!-- Copyright -->
         <div class="copyright">
-            © {{currentYear}} Blue Altair GCP Newsletter. All rights reserved.
+            © 2025 Blue Altair GCP Newsletter. All rights reserved.
         </div>
     </div>
 </body> 
