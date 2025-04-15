@@ -14,7 +14,7 @@
     },
     {
       "title": "Gemini Code Assist",
-      "description": "AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle",
+      "description": "AI-powered assistance to help development teams build, deploy, and operate apps throughout the sdlc",
       "details": "Gemini Code Assist offers AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle. Developers can use Gemini Code Assist in their IDE (such as VS Code, JetBrains IDEs like IntelliJ and PyCharm, or Android Studio) for AI-powered coding assistance in many popular languages. It provides code completions as developers write their code, generates full functions or code blocks from comments, generates unit tests, and assists with debugging, understanding, and documenting code.\nGemini Code Assist provides contextualized responses to prompts, including source citations regarding which documentation and code samples it used to generate its responses.\nFor more details please refer to below link: \nhttps://cloud.google.com/gemini/docs/codeassist/overview"
     },
     {
@@ -43,7 +43,7 @@
       "details": "BigQuery ML now supports advanced machine learning capabilities, including forecasting models and integration with TensorFlow. These enhancements allow data scientists and analysts to build and deploy predictive models directly within BigQuery, leveraging its scalable infrastructure for faster insights. Businesses can use these capabilities to make data-driven decisions, improve demand forecasting, and enhance AI-driven applications without requiring extensive machine learning expertise. The seamless integration with TensorFlow also enables the use of custom deep learning models, expanding the potential for sophisticated analytics and automation."
     },
     {
-      "title": "Agent 2 Agent communication Open source",
+      "title": "Agent-2-Agent communication",
       "description": "An interoperability protocol that enables AI agents to communicate and collaborate seamlessly",
       "details": "Agent2Agent (A2A) is an interoperability protocol designed to enable seamless communication and collaboration between AI agents, regardless of their underlying framework or vendor. It simplifies the development of complex, multi-agent systems by supporting structured interactions. Key capabilities include capability discovery through standardized JSON-based agent cards, task management protocols for efficient coordination, and dynamic collaboration through message, context, and artifact exchange. A2A has gained significant industry traction, with over 50 partners such as Atlassian, Salesforce, MongoDB, and ServiceNow backing the initiative. This growing adoption highlights the industry's commitment to building interoperable and scalable AI ecosystems.\nFor more details please refer to below link:\nhttps://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
     }
@@ -82,6 +82,11 @@
   "technicalTip": "Optimize your Cloud Storage costs with these best practices. Implementing lifecycle policies can automatically transition objects to lower-cost storage classes or delete them when they're no longer needed.",
   "learnings": [
     {
+      "title": "Google Cloud Arcade",
+      "description": "A gamified, free learning platform for Google Cloud...",
+      "link": "https://go.cloudskillsboost.google/arcade?utm_source=qwiklabs&utm_medium=lp&utm_campaign=old-site",
+      "buttonText": "View More"
+    },{
       "title": "Enhancing Your API Lifecycle With Artificial Intelligence",
       "description": "This blog will throw light on the impact ...",
       "link": "https://www.bluealtair.com/blog/enhancing-your-api-lifecycle-with-artificial-intelligence",
@@ -132,7 +137,7 @@
       "buttonText": "Join Now"
     },
     {
-      "title": "Microsoft Azure Virtual Training Day: Develop Your Own Custom Copilots with Azure AI",
+      "title": "Microsoft Azure Virtual Training Day",
       "description": "Adapt your skills and master the tools ...",
       "link": "https://msevents.microsoft.com/event?id=1148586904",
       "buttonText": "Register Now"

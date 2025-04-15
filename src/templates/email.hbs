@@ -301,7 +301,7 @@
         /* Learning & Events */
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             gap: 10px;
         }
 
@@ -661,20 +661,6 @@
                 </div>
             </div>
 
-            <!-- Learning & Events Section -->
-            <div class="section">
-                <div class="section-title">Learning & Events</div>
-                <div class="events-grid">
-                    {{#each events}}
-                    <div class="event-card">
-                        <div class="event-title">{{title}}</div>
-                        <div class="event-description">{{description}}</div>
-                        {{!-- <a href="{{link}}"
-                            class="event-button {{#if isTraining}}training-button{{/if}}">{{buttonText}}</a> --}}
-                    </div>
-                    {{/each}}
-                </div>
-            </div>
 
             <!-- Certification Spotlight Section -->
             <div class="section">
@@ -748,8 +734,23 @@
                 </div>
             </div>
 
-            <!-- Next Month's Focus Section -->
+            <!-- Learning & Events Section -->
             <div class="section">
+                <div class="section-title">Learning & Events</div>
+                <div class="events-grid">
+                    {{#each events}}
+                    <div class="event-card">
+                        <div class="event-title">{{title}}</div>
+                        <div class="event-description">{{description}}</div>
+                        {{!-- <a href="{{link}}"
+                            class="event-button {{#if isTraining}}training-button{{/if}}">{{buttonText}}</a> --}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <!-- Next Month's Focus Section -->
+            {{!-- <div class="section">
                 <div class="section-title">Next Month's Focus</div>
                 <div class="focus-items">
                     {{#each nextMonthFocus}}
@@ -760,7 +761,7 @@
                         </div>
                     </div>
                     {{/each}}
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -770,7 +771,7 @@
                 <div class="feedback-title">Feedback & Suggestions</div>
                 <div class="feedback-description">{{feedbackText}}</div>
                 <button class="feedback-button">Provide Feedback</button>
-                <button class="ideas-button">Share Ideas</button>
+                {{!-- <button class="ideas-button">Share Ideas</button> --}}
             </div>
             <div class="social-section">
                 <div class="social-title">Stay Connected</div>

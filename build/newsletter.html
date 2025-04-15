@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCP Newsletter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+
+
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: "Nunito", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, rgb(0, 0, 134), rgb(251, 164, 157));
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: auto;
+            /* margin-left: 5px; */
+        }
+
+        .newsletter-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+            font-family: "Nunito", sans-serif;
+            font-style: normal;
+            margin-right: 40px;
+        }
+
+        .issue-info {
+            font-size: 14px;
+            color: white;
+            text-align: right;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 2px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 2px;
+            color: #202124;
+        }
+
+        /* Leadership Message */
+        .leadership-message {
+            background-color: #f8f9fb;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .leader-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .leader-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .leader-name {
+            font-weight: bold;
+            margin-left: 12px;
+        }
+
+        .leader-quote {
+            font-style: italic;
+            margin-left: 12px;
+            color: #5f6368;
+            font-size: small;
+        }
+
+        /* Feature Updates */
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .update-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 4px;
+            position: relative;
+            margin: 4px;
+        }
+
+        .update-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #4285f4;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .update-icon span {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .update-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .update-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        .learn-more {
+            color: #4285f4;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            /* align-items: center; */
+        }
+
+        .learn-more:after {
+            content: "›";
+            margin-left: 5px;
+        }
+
+        .learn-more extend {
+            position: fixed;
+        }
+
+        /* Initiatives */
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .initiative-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .initiative-card.expanded {
+            grid-column: 1 / -1;
+        }
+
+        .initiative-image {
+            width: 272px;
+            height: 120px;
+            background-color: #e8eaed;
+            object-fit: cover;
+            border-radius: 4%;
+        }
+
+        .initiative-content {
+            padding: 15px;
+        }
+
+        .initiative-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .initiative-description {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        .initiative-content .learn-more {
+            color: #007bff;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .initiative-content .expanded-content {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .initiative-card.expanded .expanded-content {
+            display: block;
+        }
+
+        .initiative-content .close-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #666;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .initiative-content .close-btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* Security Updates */
+        .security-alert {
+            background-color: #fdeded;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .alert-icon {
+            color: #ea4335;
+            margin-right: 15px;
+        }
+
+        .alert-content {
+            flex-grow: 1;
+        }
+
+        .alert-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .alert-description {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .alert-button-view {
+            background-color: #ea4335;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            display: block;
+        }
+
+        /* Technical Insights */
+        .tip-container {
+            margin-bottom: 20px;
+        }
+
+        .tip-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .tip-icon {
+            color: #fbbc04;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .tip-title {
+            font-weight: bold;
+        }
+
+        .tip-content {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        .code-block {
+            background-color: #202124;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: "Nunito", sans-serif;
+            margin-bottom: 20px;
+        }
+
+        /* Learning & Events */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .event-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .event-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #4285f4;
+        }
+
+        .training-icon {
+            color: #34a853;
+        }
+
+        .event-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .event-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        .event-button {
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            color: white;
+            background-color: #4285f4;
+        }
+
+        .training-button {
+            background-color: #34a853;
+        }
+
+        /* Certification Spotlight */
+        .section {
+            max-width: 800px;
+            /* Adjust as needed */
+            margin: 2px;
+        }
+
+        .spotlight-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* Ensures max 2 columns */
+            gap: 15px;
+        }
+
+        .spotlight-card {
+            background-color: #f1f8e9;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            /* Change from grid to flex for better alignment */
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .spotlight-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .spotlight-content {
+            flex-grow: 1;
+        }
+
+        .spotlight-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .spotlight-achievement {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .certified-date {
+            font-size: 12px;
+            color: #5f6368;
+            display: flex;
+            align-items: center;
+        }
+
+        .star-icon {
+            color: #fbbc04;
+            margin-right: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .spotlight-container {
+                grid-template-columns: 1fr;
+                /* Stack cards in a single column on small screens */
+            }
+        }
+
+
+        /* Community & Collaboration */
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .community-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .shoutouts-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .shoutout-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .shoutout-icon {
+            margin-right: 10px;
+            color: #fbbc04;
+        }
+
+        .shoutout-team {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .shoutout-contribution {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        .ideas-card {
+            text-align: center;
+        }
+
+        .ideas-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .ideas-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 15px;
+        }
+
+        .ideas-button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Next Month Focus */
+        .focus-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .focus-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .focus-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+        }
+
+        .cloud-icon {
+            background-color: #4285f4;
+        }
+
+        .security-icon {
+            background-color: #34a853;
+        }
+
+        .focus-content {
+            flex-grow: 1;
+        }
+
+        .focus-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .focus-description {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .feedback-section {
+            flex-grow: 1;
+        }
+
+        .feedback-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feedback-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        .feedback-button {
+            background-color: transparent;
+            border: 1px solid #5f6368;
+            color: #5f6368;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .social-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            position: relative;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            /* margin-left: 15px; */
+            color: #5f6368;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #5f6368;
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(135deg, rgb(251, 164, 157), rgb(0, 0, 134));
+            color: white;
+        }
+
+        .anchor {
+            display: inline-block;
+        }
+
+        .social-media-icons {
+            margin-right: 8px;
+            margin-left: 8px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+
+            .updates-grid,
+            .initiatives-grid,
+            .events-grid,
+            .community-grid,
+            .focus-items {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 2px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 7px;
+            color: #333;
+        }
+
+        .updates-grid {
+            display: grid;
+            /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+            gap: 20px;
+        }
+
+        .update-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .update-card.expanded {
+            grid-column: 1 / -1;
+        }
+
+        .update-icon {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .update-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .learn-more {
+            color: #007bff;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .expanded-content {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .update-card.expanded .expanded-content {
+            display: block;
+        }
+
+        .close-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #666;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .close-btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* .security-alert {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        position: relative;
+        transition: all 0.3s ease;
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+    } */
+
+        .security-alert.expanded {
+            grid-column: 1 / -1;
+            flex-direction: column;
+        }
+
+        /* .alert-icon {
+        font-size: 24px;
+        margin-right: 15px;
+    } */
+
+        .alert-content {
+            flex-grow: 1;
+        }
+
+        .alert-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        /* .alert-button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+    } */
+
+        /* Update existing styles to include security alerts */
+        .expanded-content {
+            display: none;
+            width: 100%;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .security-alert.expanded .expanded-content {
+            display: block;
+        }
+
+        .extend {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+
+
+
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-logo">
+                <a href="https://www.bluealtair.com"><img class="logo"
+                        src="https://www.bluealtair.com/hubfs/Logo-ColorStar-WhiteText.svg" width="150"></a>
+            </div>
+            <div class="newsletter-title">GCP Newsletter</div>
+            <div class="issue-info">
+                Issue #1<br>
+                April 2025
+            </div>
+        </div>
+
+        <!-- Leadership Message Section -->
+        <div class="section">
+            <div class="section-title">Leadership Message</div>
+            <div class="leadership-message">
+                <div class="leader-info">
+                    <div class="leader-name">Welcome to the first edition of Blue Altair&#x27;s Google Cloud Platform Community newsletter!</div>
+                </div>
+                <div class="leader-quote">
+                    "As proud Google Cloud Partners, we have successfully delivered numerous projects leveraging GCP&#x27;s cutting-edge technologies. To strengthen this partnership, we emphasize continuous learning, certifications, and hands-on experience with real-world projects. This newsletter is designed to share valuable insights, foster collaboration, expand GCP product knowledge, highlight noteworthy blogs, offer training opportunities, and drive innovation within the GCP ecosystem. This month, we&#x27;ve packed in the latest trends, must-know updates, and a few surprises just for you. Whether you&#x27;re here for industry news, expert tips, or a dose of inspiration, there&#x27;s something for everyone!"
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Updates Section -->
+        <div class="section">
+            <div class="section-title">Featured Updates & Announcements</div>
+            <div class="updates-grid">
+                <div class="update-card expandable">
+                    <div class="update-title">Apigee Spaces</div>
+                    <div class="update-description">Identity-based isolation and grouping of API resources within an Apigee organization</div>
+                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="expanded-content">
+                        <div class="close-btn" onclick="closeDetails()">Close</div>
+                        <h2>Apigee Spaces</h2>
+                        <p>Apigee Spaces enables identity-based isolation and grouping of API resources within an Apigee organization. Apigee Spaces allows you to have granular IAM control over access to your API proxies, shared flows, and API products. Developers can create multiple Spaces within the same organization for different teams, development projects, or environments and set IAM controls for each Space. Any API resources created under a Space will inherit the IAM policies applied to that Space.
+For more details please refer to below link: 
+https://cloud.google.com/apigee/docs/api-platform/system-administration/spaces/apigee-spaces-overview</p>
+                    </div>
+                </div>
+                <div class="update-card expandable">
+                    <div class="update-title">Gemini Code Assist</div>
+                    <div class="update-description">AI-powered assistance to help development teams build, deploy, and operate apps throughout the sdlc</div>
+                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="expanded-content">
+                        <div class="close-btn" onclick="closeDetails()">Close</div>
+                        <h2>Gemini Code Assist</h2>
+                        <p>Gemini Code Assist offers AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle. Developers can use Gemini Code Assist in their IDE (such as VS Code, JetBrains IDEs like IntelliJ and PyCharm, or Android Studio) for AI-powered coding assistance in many popular languages. It provides code completions as developers write their code, generates full functions or code blocks from comments, generates unit tests, and assists with debugging, understanding, and documenting code.
+Gemini Code Assist provides contextualized responses to prompts, including source citations regarding which documentation and code samples it used to generate its responses.
+For more details please refer to below link: 
+https://cloud.google.com/gemini/docs/codeassist/overview</p>
+                    </div>
+                </div>
+                <div class="update-card expandable">
+                    <div class="update-title">BigQuery ML Enhancements</div>
+                    <div class="update-description">New machine learning capabilities in BigQuery with TensorFlow integration.</div>
+                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="expanded-content">
+                        <div class="close-btn" onclick="closeDetails()">Close</div>
+                        <h2>BigQuery ML Enhancements</h2>
+                        <p>BigQuery ML now supports advanced machine learning capabilities, including forecasting models and integration with TensorFlow. These enhancements allow data scientists and analysts to build and deploy predictive models directly within BigQuery, leveraging its scalable infrastructure for faster insights. Businesses can use these capabilities to make data-driven decisions, improve demand forecasting, and enhance AI-driven applications without requiring extensive machine learning expertise. The seamless integration with TensorFlow also enables the use of custom deep learning models, expanding the potential for sophisticated analytics and automation.
+For more details please refer to below link:
+https://cloud.google.com/bigquery/docs/bqml-introduction</p>
+                    </div>
+                </div>
+                <div class="update-card expandable">
+                    <div class="update-title">Anywhere Cache</div>
+                    <div class="update-description">Accelerate GCS access using globally distributed caching infrastructure</div>
+                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="expanded-content">
+                        <div class="close-btn" onclick="closeDetails()">Close</div>
+                        <h2>Anywhere Cache</h2>
+                        <p>Anywhere Cache is a built-in performance optimization in Google Cloud Storage that reduces latency and improves read speeds by serving frequently accessed objects from cache nodes located across Google’s global edge and regional network. This means users and applications can access data faster, regardless of their geographical location. Unlike traditional CDNs, Anywhere Cache is natively integrated into GCS and doesn’t require separate configuration. It’s ideal for media streaming, global machine learning pipelines, analytics dashboards, and gaming workloads. While it offers significant performance gains, it’s designed for read-heavy workloads and doesn&#x27;t offer direct cache management.
+For more details please refer to below link:
+https://cloud.google.com/storage/docs/anywhere-cache</p>
+                    </div>
+                </div>
+                <div class="update-card expandable">
+                    <div class="update-title">Cloud Storage Cost Optimization</div>
+                    <div class="update-description">Google Cloud Storage offers cost optimization features like Object Lifecycle ..</div>
+                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="expanded-content">
+                        <div class="close-btn" onclick="closeDetails()">Close</div>
+                        <h2>Cloud Storage Cost Optimization</h2>
+                        <p>Google Cloud Storage offers features to optimize costs, such as Object Lifecycle Management, which automates actions like setting Time to Live (TTL) or transitioning objects to cheaper storage classes. Coldline and Archive Storage provide significant savings for infrequently accessed data, though with longer retrieval times. Additionally, Efficient Data Compression reduces storage space, helping organizations further cut costs while maintaining scalability.
+For more details please refer to below link:
+https://cloud.google.com/architecture/framework/cost-optimization</p>
+                    </div>
+                </div>
+                <div class="update-card expandable">
+                    <div class="update-title">Vertex AI Agent Builder</div>
+                    <div class="update-description">Build and deploy enterprise ready generative AI experiences</div>
+                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="expanded-content">
+                        <div class="close-btn" onclick="closeDetails()">Close</div>
+                        <h2>Vertex AI Agent Builder</h2>
+                        <p>Vertex AI Agent Builder offers enterprise-grade security and governance controls, ensuring AI agents are deployed within a secure, compliant framework. It integrates Google Cloud’s Identity and Access Management (IAM), robust data encryption (both at rest and in transit), and comprehensive monitoring capabilities via Cloud Monitoring to safeguard sensitive information. Businesses can customize AI models while adhering to industry regulations, facilitated by Google Cloud’s compliance tools and private AI capabilities.
+For more details please refer to below link:
+https://cloud.google.com/products/agent-builder</p>
+                    </div>
+                </div>
+                <div class="update-card expandable">
+                    <div class="update-title">New Feature Release: Cloud Run for Anthos</div>
+                    <div class="update-description">Introducing advanced capabilities for containerized applications.</div>
+                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="expanded-content">
+                        <div class="close-btn" onclick="closeDetails()">Close</div>
+                        <h2>New Feature Release: Cloud Run for Anthos</h2>
+                        <p>BigQuery ML now supports advanced machine learning capabilities, including forecasting models and integration with TensorFlow. These enhancements allow data scientists and analysts to build and deploy predictive models directly within BigQuery, leveraging its scalable infrastructure for faster insights. Businesses can use these capabilities to make data-driven decisions, improve demand forecasting, and enhance AI-driven applications without requiring extensive machine learning expertise. The seamless integration with TensorFlow also enables the use of custom deep learning models, expanding the potential for sophisticated analytics and automation.</p>
+                    </div>
+                </div>
+                <div class="update-card expandable">
+                    <div class="update-title">Agent-2-Agent communication</div>
+                    <div class="update-description">An interoperability protocol that enables AI agents to communicate and collaborate seamlessly</div>
+                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="expanded-content">
+                        <div class="close-btn" onclick="closeDetails()">Close</div>
+                        <h2>Agent-2-Agent communication</h2>
+                        <p>Agent2Agent (A2A) is an interoperability protocol designed to enable seamless communication and collaboration between AI agents, regardless of their underlying framework or vendor. It simplifies the development of complex, multi-agent systems by supporting structured interactions. Key capabilities include capability discovery through standardized JSON-based agent cards, task management protocols for efficient coordination, and dynamic collaboration through message, context, and artifact exchange. A2A has gained significant industry traction, with over 50 partners such as Atlassian, Salesforce, MongoDB, and ServiceNow backing the initiative. This growing adoption highlights the industry&#x27;s commitment to building interoperable and scalable AI ecosystems.
+For more details please refer to below link:
+https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blue Altair's GCP Initiatives -->
+        <div class="section">
+            <div class="section-title">Blue Altair's GCP Initiatives</div>
+            <div class="initiatives-grid">
+                <div class="initiative-card expandable">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q&#x3D;tbn:ANd9GcQY6ifK6f2qRYyNCAPSwg9AFPN0jENtVzTRyw&amp;s" alt="Blue Lab project - Apigee Migration Accelerator" class="initiative-image">
+                    <div class="initiative-content">
+                        <div class="extend" onclick="toggleDetails(this)">
+                            <div class="initiative-title">Blue Lab project - Apigee Migration Accelerator</div>
+                            <div class="initiative-description">A new Python-based Apigee migration accelerator to support cross-platform data migration across different Apigee environments</div>
+                        </div>
+                        <div class="expanded-content">
+                            <h2>Blue Lab project - Apigee Migration Accelerator</h2>
+                            <p>A new Python-based Apigee migration accelerator to support cross-platform data migration across different Apigee environments, including Edge to Hybrid and Hybrid to Hybrid. The tool provides end-to-end support for exporting data from the source organization, importing it into the target organization, and generating detailed reports based on the downloaded data. It is designed to streamline the migration process while maintaining consistency and traceability across environments</p>
+                            <div class="close-btn" onclick="closeDetails()">Close</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="initiative-card expandable">
+                    <img src="https://media.licdn.com/dms/image/v2/C4E12AQGuJIc5Wsdvrg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1549389176142?e&#x3D;2147483647&amp;v&#x3D;beta&amp;t&#x3D;L_l6_CPdqz2GSvM1S07Lys6ZTwDymiYb7hMLCxuSSnY" alt="Blue Lab project - CICD pipeline for Apigee API Proxy deployment" class="initiative-image">
+                    <div class="initiative-content">
+                        <div class="extend" onclick="toggleDetails(this)">
+                            <div class="initiative-title">Blue Lab project - CICD pipeline for Apigee API Proxy deployment</div>
+                            <div class="initiative-description">Demonstrate the process of deploying an API proxy on Apigee using Cloud Build and a GitLab repository..</div>
+                        </div>
+                        <div class="expanded-content">
+                            <h2>Blue Lab project - CICD pipeline for Apigee API Proxy deployment</h2>
+                            <p>In this proof of concept (POC), we aim to demonstrate the process of deploying an API proxy on Apigee using Cloud Build and a GitLab repository. The solution leverages a configuration JSON file to capture inputs, streamlining the deployment process. Additionally, an approval mechanism has been integrated, ensuring that the deployment is triggered only after the necessary build approval is granted. This POC not only enhances deployment efficiency but also adds an extra layer of control and security, maintaining high-quality standards throughout the process.</p>
+                            <div class="close-btn" onclick="closeDetails()">Close</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="initiative-card expandable">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q&#x3D;tbn:ANd9GcTJkVOBDw9EN9UcJt0hCTzuM5VfRa3BePiY6g&amp;s" alt="GCP Newsletter Hosting on GCP Cloud Run" class="initiative-image">
+                    <div class="initiative-content">
+                        <div class="extend" onclick="toggleDetails(this)">
+                            <div class="initiative-title">GCP Newsletter Hosting on GCP Cloud Run</div>
+                            <div class="initiative-description">Implementing comprehensive security measures using Google&#x27;s security primitives and best practices.</div>
+                        </div>
+                        <div class="expanded-content">
+                            <h2>GCP Newsletter Hosting on GCP Cloud Run</h2>
+                            <p>GCP Newsletter Hosting on GCP Cloud Run is a cutting-edge initiative focused on enhancing cloud security using Google&#x27;s industry-leading security primitives. This framework is designed to help enterprises implement end-to-end security measures, including zero-trust architectures, advanced encryption mechanisms, and threat detection systems. By incorporating IAM (Identity and Access Management), VPC Service Controls, and security policy enforcement, organizations can protect sensitive data, mitigate risks, and ensure compliance with regulatory requirements. GCP Newsletter Hosting on GCP Cloud Run also integrates AI-driven anomaly detection and automated security incident response, ensuring robust protection against evolving cyber threats.</p>
+                            <div class="close-btn" onclick="closeDetails()">Close</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Updates Section -->
+        <div class="section">
+            <div class="section-title">Security Updates</div>
+            <div class="security-alert expandable">
+                <div class="alert-content">
+                    <div class="alert-title">Critical Security Advisory</div>
+                    <div class="alert-description">Important updates regarding Cloud Identity and Access Management. All teams must update IAM policies by March 15th to comply with new security standards.</div>
+                    <button class="alert-button-view" id="view" onclick="toggleSecurityDetails(this)">View
+                        Details</button>
+                    <button class="alert-button-view" id="close" onclick="closeSecurityDetails(this)"
+                        style="display: none;">Close Details</button>
+                </div>
+                <div class="expanded-content">
+                    <h2>Critical Security Advisory Details</h2>
+                    <p>All organizations using Cloud IAM must update their policies to include the new resource location constraints and session duration limits. These changes are required to meet updated ISO 27001 compliance standards. Failure to implement these changes by March 15th may result in service interruptions. Detailed migration guides and policy templates are available in the Security Hub.</p>
+                    <p>Key changes include:</p>
+                    <ul>
+                        <li>Mandatory multi-factor authentication for all admin roles</li>
+                        <li>Session duration limits of 12 hours for privileged accounts</li>
+                        <li>Geofencing requirements for sensitive data access</li>
+                        <li>Enhanced audit logging configuration requirements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Insights Section -->
+        <div class="section">
+            <div class="section-title">Technical Insights</div>
+            <div class="tip-container">
+                <div class="tip-header">
+                    <div class="tip-icon">💡</div>
+                    <div class="tip-title">Tip of the Month</div>
+                </div>
+                <div class="tip-content">Optimize your Cloud Storage costs with these best practices. Implementing lifecycle policies can automatically transition objects to lower-cost storage classes or delete them when they&#x27;re no longer needed.</div>
+            </div>
+        </div>
+
+        <!-- Learning & Events Section -->
+        <div class="section">
+            <div class="section-title">Learning & Events</div>
+
+            <!-- Learnings Section -->
+            <div style="font-size: medium; font-family: nunito; font-style: italic; font-weight: bold;">🎓 Learnings:
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-title">Google Cloud Arcade</div>
+                    <div class="event-description">A gamified, free learning platform for Google Cloud...</div>
+                    <a href="https://go.cloudskillsboost.google/arcade?utm_source&#x3D;qwiklabs&amp;utm_medium&#x3D;lp&amp;utm_campaign&#x3D;old-site">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                <div class="event-card">
+                    <div class="event-title">Enhancing Your API Lifecycle With Artificial Intelligence</div>
+                    <div class="event-description">This blog will throw light on the impact ...</div>
+                    <a href="https://www.bluealtair.com/blog/enhancing-your-api-lifecycle-with-artificial-intelligence">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                <div class="event-card">
+                    <div class="event-title">Amplifying the Power of Google Ads with BigQuery</div>
+                    <div class="event-description">Integrating Google Ads data with BigQuery...</div>
+                    <a href="https://www.bluealtair.com/blog/amplifying-the-power-of-google-ads-with-bigquery">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                <div class="event-card">
+                    <div class="event-title">Redefining Connectivity with Google Cloud&#x27;s Application Integration</div>
+                    <div class="event-description">Google now has an answer with ...</div>
+                    <a href="https://www.bluealtair.com/blog/google-cloud-application-integration-solutions">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                <div class="event-card">
+                    <div class="event-title">Google Cloud Datasheet: Blue Altair</div>
+                    <div class="event-description">Google Cloud services enable enterprises ...</div>
+                    <a href="https://www.bluealtair.com/hubfs/New%20Site%202023/Documents/Blue%20Altair%20-%20Google%20Cloud%20Partner%20Datasheet.pdf?hsLang&#x3D;en">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                <div class="event-card">
+                    <div class="event-title">Apigee Datasheet: Blue Altair</div>
+                    <div class="event-description">Apigee is a key driver for expediting ...</div>
+                    <a href="https://www.bluealtair.com/hubfs/New%20Site%202023/Documents/Blue%20Altair%20-%20Apigee%20Partner%20Datasheet.pdf?hsLang&#x3D;en">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Events Section -->
+            <div
+                style="margin-top: 12px; font-size: medium; font-family: nunito; font-style: italic; font-weight: bold;">
+                🗓️ Events:
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-title">Generative AI training:Live</div>
+                    <div class="event-description">These stand-alone classes are ...</div>
+                    <a href="https://rsvp.withgoogle.com/events/partner-learning/gen-ai-schedule">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                <div class="event-card">
+                    <div class="event-title">Best of Next &#x27;25</div>
+                    <div class="event-description">Google Cloud&#x27;s global flagship moment ..</div>
+                    <a href="https://cloudonair.withgoogle.com/events/apac-best-of-next25?utm_campaign&#x3D;FY25-Q1-APAC-APA32178-onlineevent-er-best-of-next-25-24145&amp;utm_medium&#x3D;email&amp;utm_source&#x3D;partner&amp;utm_content&#x3D;apac_bon25_invite_partner_internal&amp;utm_content&#x3D;&amp;mkt_tok&#x3D;ODA4LUdKVy0zMTQAAAGZjkTnJG0L5l9b5gSb3dxJmOLROdyR9GfoJUwjLHdZPdmB0xxVKf0Y635fwruGtBMrMC28UMOqmtrfU5dTdU2bvyTdHy9Xa9qC6VW4IQm5JGZfuVZOZGI">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                <div class="event-card">
+                    <div class="event-title">Live Classes-Partner CA</div>
+                    <div class="event-description">Google Certification live Classes for ...</div>
+                    <a href="https://rsvp.withgoogle.com/events/partner-learning/partner-certification-academy?utm_source&#x3D;quarterly+subscriber+newsletter&amp;utm_medium&#x3D;RSVP&amp;utm_campaign&#x3D;Q22024">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                <div class="event-card">
+                    <div class="event-title">Microsoft Azure Virtual Training Day</div>
+                    <div class="event-description">Adapt your skills and master the tools ...</div>
+                    <a href="https://msevents.microsoft.com/event?id&#x3D;1148586904">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                <div class="event-card">
+                    <div class="event-title">AWS Discovery Days</div>
+                    <div class="event-description">Kickstart your cloud journey with AWS ...</div>
+                    <a href="https://meeting.zoho.com/meeting/register?sessionId&#x3D;1061898686">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certification Spotlight Section -->
+        <div class="section">
+            <div class="section-title">Certification Spotlight</div>
+            <div class="spotlight-container">
+                <div class="spotlight-card">
+                    <img src="https://ca.slack-edge.com/T03K4UPRDE1-U03PG9GQ4Q2-955a3e821083-192" alt="Ayush Sagore" class="spotlight-avatar">
+                    <div class="spotlight-content">
+                        <div class="spotlight-name">Ayush Sagore</div>
+                        <div class="spotlight-achievement">Achieved Google Cloud Professional Cloud Developer certification</div>
+                        <div class="certified-date">
+                            <span class="star-icon">⭐</span> Certified: 2nd January 2025
+                        </div>
+                    </div>
+                </div>
+                <div class="spotlight-card">
+                    <img src="https://ca.slack-edge.com/T03K4UPRDE1-U04KS8G78M6-4758a86d2fab-512" alt="Ankit Agade" class="spotlight-avatar">
+                    <div class="spotlight-content">
+                        <div class="spotlight-name">Ankit Agade</div>
+                        <div class="spotlight-achievement">Achieved Google Cloud Professional Cloud Developer certification</div>
+                        <div class="certified-date">
+                            <span class="star-icon">⭐</span> Certified: 3rd January 2025
+                        </div>
+                    </div>
+                </div>
+                <div class="spotlight-card">
+                    <img src="https://ca.slack-edge.com/T03K4UPRDE1-U03MDTK8WAX-911162a3843c-192" alt="Abdul Qudir Tinwala" class="spotlight-avatar">
+                    <div class="spotlight-content">
+                        <div class="spotlight-name">Abdul Qudir Tinwala</div>
+                        <div class="spotlight-achievement">Achieved Google Cloud Professional Cloud Developer certification</div>
+                        <div class="certified-date">
+                            <span class="star-icon">⭐</span> Certified: 3rd January 2025
+                        </div>
+                    </div>
+                </div>
+                <div class="spotlight-card">
+                    <img src="https://ca.slack-edge.com/T03K4UPRDE1-U04JVV3PN06-30b387a17488-192" alt="Disha baghele" class="spotlight-avatar">
+                    <div class="spotlight-content">
+                        <div class="spotlight-name">Disha baghele</div>
+                        <div class="spotlight-achievement">Achieved Google Cloud Professional Cloud Developer certification</div>
+                        <div class="certified-date">
+                            <span class="star-icon">⭐</span> Certified: 15th February 2025
+                        </div>
+                    </div>
+                </div>
+                <div class="spotlight-card">
+                    <img src="https://ca.slack-edge.com/T03K4UPRDE1-U04MJJC13KN-8b233b596a87-192" alt="Zarqua Qazi" class="spotlight-avatar">
+                    <div class="spotlight-content">
+                        <div class="spotlight-name">Zarqua Qazi</div>
+                        <div class="spotlight-achievement">Completed The &quot;HashiCorp Certified - Terraform-Associate</div>
+                        <div class="certified-date">
+                            <span class="star-icon">⭐</span> Certified: 30th March 2025
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community & Collaboration Section -->
+        <div class="section">
+            <div class="section-title">Community & Collaboration</div>
+            <div class="community-grid">
+                <div class="community-card">
+                    <ul class="shoutouts-list">
+                        <li class="shoutout-item">
+                            <img src="https://ca.slack-edge.com/T03K4UPRDE1-U03MDTMCZAP-75e827ca08b2-512" alt="Prasad Walke" class="spotlight-avatar">
+                            <div>
+                                <div class="shoutout-team">Prasad Walke</div>
+                                <div class="shoutout-contribution">For creating Apigee Accelerator for Apigee API Proxy and Artifact migration from One Organization (Edge/Hybrid) to another Organization.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="community-card">
+                    <ul class="shoutouts-list">
+                        <li class="shoutout-item">
+                            <img src="https://ca.slack-edge.com/T03K4UPRDE1-U03N3N1AMPA-e20aa3911672-192" alt="Arjun Ashok" class="spotlight-avatar">
+                            <div>
+                                <div class="shoutout-team">Arjun Ashok</div>
+                                <div class="shoutout-contribution">For helping us with initial design of the newsletter.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="community-card">
+                    <ul class="shoutouts-list">
+                        <li class="shoutout-item">
+                            <img src="https://ca.slack-edge.com/T03K4UPRDE1-U08BETX28FM-2f1b8b7271c4-512" alt="Vinay More" class="spotlight-avatar">
+                            <div>
+                                <div class="shoutout-team">Vinay More</div>
+                                <div class="shoutout-contribution">for creating newsletter Framework using HTML, CSS and JS.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="community-card">
+                    <ul class="shoutouts-list">
+                        <li class="shoutout-item">
+                            <img src="https://ca.slack-edge.com/T03K4UPRDE1-U08BU14SD18-d1428cb13fdf-512" alt="Parthesh Patel" class="spotlight-avatar">
+                            <div>
+                                <div class="shoutout-team">Parthesh Patel</div>
+                                <div class="shoutout-contribution">for creating newsletter Framework using HTML, CSS and JS.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="community-card">
+                    <ul class="shoutouts-list">
+                        <li class="shoutout-item">
+                            <img src="https://ca.slack-edge.com/T03K4UPRDE1-U04PC8M8WMA-72e4be4c2ab6-512" alt="Sanket Choughule" class="spotlight-avatar">
+                            <div>
+                                <div class="shoutout-team">Sanket Choughule</div>
+                                <div class="shoutout-contribution">Creating POC for CICD pipeline building using GCP Cloud Build &amp; Repository.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="community-card">
+                    <ul class="shoutouts-list">
+                        <li class="shoutout-item">
+                            <img src="https://ca.slack-edge.com/T03K4UPRDE1-U05JYGLEYN5-0da477cceda5-512" alt="Supriya Badgujar" class="spotlight-avatar">
+                            <div>
+                                <div class="shoutout-team">Supriya Badgujar</div>
+                                <div class="shoutout-contribution">For helping BA Team members for GCP certification and notify about GCP events.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Month's Focus Section -->
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="feedback-section">
+                <div class="feedback-title">Feedback & Suggestions</div>
+                <div class="feedback-description">Your insights matter to us! Share your thoughts on our newsletter content, design, and delivery frequency. We&#x27;re constantly working to improve your experience and provide content that matters most to you. Have ideas for future topics? Let us know what you&#x27;d like to see in upcoming editions.</div>
+                <a href="mailto:gcp.community@bluealtair.com">
+                    <button class="feedback-button">
+                        Provide Feedback
+                    </button>
+                </a>
+
+            </div>
+            <div class="social-section">
+                <div class="social-title">Stay Connected</div>
+                <div class="social-icons">
+                    <div class="social-media-icons"><a class="anchor" href="https://www.linkedin.com/company/blue-altair"><img src="./linkedin.png"
+                                class="social-icon"></a></div>
+                    <div class="social-media-icons"><a class="anchor" href="https://x.com/bluealtair1"><img src="./twitter.png"
+                                class="social-icon"></a></div>
+                    <div class="social-media-icons"><a class="anchor" href="https://www.facebook.com/bluealtair1/"><img src="./fb.png"
+                                class="social-icon"></a></div>
+                    <div class="social-media-icons"><a class="anchor" href="https://www.instagram.com/bluealtair1/#"><img src="./ig.png"
+                                class="social-icon"></a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            © 2025 Blue Altair GCP Newsletter. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // Your JavaScript functions here (same as in your HTML)
+        function toggleDetails(button) {
+            const container = button.closest('.expandable');
+            const wasExpanded = container.classList.contains('expanded');
+
+            // Close all expandable elements
+            document.querySelectorAll('.expandable').forEach(el => {
+                el.classList.remove('expanded');
+            });
+
+            // Open clicked element if it wasn't already expanded
+            if (!wasExpanded) {
+                container.classList.add('expanded');
+            }
+        }
+
+        function toggleSecurityDetails(button) {
+            const view = document.getElementById('view');
+            const close = document.getElementById('close');
+
+            if (close.style.display === "none") {
+                close.style.display = "block";
+            } else {
+                close.style.display = "none";
+            }
+
+            if (view.style.display === "none") {
+                view.style.display = "block";
+            } else {
+                view.style.display = "none";
+            }
+
+            const container = button.closest('.expandable');
+            const wasExpanded = container.classList.contains('expanded');
+
+            document.querySelectorAll('.expandable').forEach(el => {
+                el.classList.remove('expanded');
+            });
+
+            if (!wasExpanded) {
+                container.classList.add('expanded');
+            }
+        }
+
+        function closeDetails() {
+            document.querySelectorAll('.expandable').forEach(el => {
+                el.classList.remove('expanded');
+            });
+        }
+
+        function closeSecurityDetails(button) {
+            const close = document.getElementById('close');
+            const view = document.getElementById('view');
+            if (view.style.display === "none") {
+                view.style.display = "block";
+            } else {
+                view.style.display = "none";
+            }
+            if (close.style.display === "none") {
+                close.style.display = "block";
+            } else {
+                close.style.display = "none";
+            }
+            document.querySelectorAll('.expandable').forEach(el => {
+                el.classList.remove('expanded');
+            });
+        }
+    </script>
+</body>
+
+</html>

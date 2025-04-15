@@ -11,7 +11,7 @@
         rel="stylesheet">
 
     {{!-- Style for email newsletter --}}
-    <style>
+    {{!-- <style>
         body {
             font-family: "Nunito", sans-serif;
             margin: 0;
@@ -116,7 +116,7 @@
         /* Leadership Message */
         .leadership-message {
             background-color: #f8f9fb;
-            padding: 1px;
+            padding: 8px;
             margin-bottom: 10px;
         }
 
@@ -139,7 +139,7 @@
 
         .leader-quote {
             font-style: italic;
-            margin-left: 2px;
+            margin-left: 42px;
             color: #5f6368;
             font-size: small;
         }
@@ -301,7 +301,7 @@
         /* Learning & Events */
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
 
@@ -607,13 +607,765 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
+    </style> --}}
 
+
+    {{!-- Style for main newsletter --}}
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: "Nunito", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, rgb(0, 0, 134), rgb(251, 164, 157));
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: auto;
+            /* margin-left: 5px; */
+        }
+
+        .newsletter-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+            font-family: "Nunito", sans-serif;
+            font-style: normal;
+            margin-right: 40px;
+        }
+
+        .issue-info {
+            font-size: 14px;
+            color: white;
+            text-align: right;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 2px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 2px;
+            color: #202124;
+        }
+
+        /* Leadership Message */
+        .leadership-message {
+            background-color: #f8f9fb;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .leader-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .leader-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .leader-name {
+            font-weight: bold;
+            margin-left: 12px;
+        }
+
+        .leader-quote {
+            font-style: italic;
+            margin-left: 12px;
+            color: #5f6368;
+            font-size: small;
+        }
+
+        /* Feature Updates */
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .update-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 4px;
+            position: relative;
+            margin: 4px;
+        }
+
+        .update-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #4285f4;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .update-icon span {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .update-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .update-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        .learn-more {
+            color: #4285f4;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            /* align-items: center; */
+        }
+
+        .learn-more:after {
+            content: "›";
+            margin-left: 5px;
+        }
+
+        .learn-more extend {
+            position: fixed;
+        }
+
+        /* Initiatives */
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .initiative-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .initiative-card.expanded {
+            grid-column: 1 / -1;
+        }
+
+        .initiative-image {
+            width: 272px;
+            height: 120px;
+            background-color: #e8eaed;
+            object-fit: cover;
+            border-radius: 4%;
+        }
+
+        .initiative-content {
+            padding: 15px;
+        }
+
+        .initiative-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .initiative-description {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        .initiative-content .learn-more {
+            color: #007bff;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .initiative-content .expanded-content {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .initiative-card.expanded .expanded-content {
+            display: block;
+        }
+
+        .initiative-content .close-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #666;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .initiative-content .close-btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* Security Updates */
+        .security-alert {
+            background-color: #fdeded;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .alert-icon {
+            color: #ea4335;
+            margin-right: 15px;
+        }
+
+        .alert-content {
+            flex-grow: 1;
+        }
+
+        .alert-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .alert-description {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .alert-button-view {
+            background-color: #ea4335;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            display: block;
+        }
+
+        /* Technical Insights */
+        .tip-container {
+            margin-bottom: 20px;
+        }
+
+        .tip-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .tip-icon {
+            color: #fbbc04;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .tip-title {
+            font-weight: bold;
+        }
+
+        .tip-content {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        .code-block {
+            background-color: #202124;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: "Nunito", sans-serif;
+            margin-bottom: 20px;
+        }
+
+        /* Learning & Events */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .event-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .event-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #4285f4;
+        }
+
+        .training-icon {
+            color: #34a853;
+        }
+
+        .event-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .event-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        .event-button {
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            color: white;
+            background-color: #4285f4;
+        }
+
+        .training-button {
+            background-color: #34a853;
+        }
+
+        /* Certification Spotlight */
+        .section {
+            max-width: 800px;
+            /* Adjust as needed */
+            margin: 2px;
+        }
+
+        .spotlight-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* Ensures max 2 columns */
+            gap: 15px;
+        }
+
+        .spotlight-card {
+            background-color: #f1f8e9;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            /* Change from grid to flex for better alignment */
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .spotlight-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .spotlight-content {
+            flex-grow: 1;
+        }
+
+        .spotlight-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .spotlight-achievement {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .certified-date {
+            font-size: 12px;
+            color: #5f6368;
+            display: flex;
+            align-items: center;
+        }
+
+        .star-icon {
+            color: #fbbc04;
+            margin-right: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .spotlight-container {
+                grid-template-columns: 1fr;
+                /* Stack cards in a single column on small screens */
+            }
+        }
+
+
+        /* Community & Collaboration */
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .community-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .shoutouts-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .shoutout-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .shoutout-icon {
+            margin-right: 10px;
+            color: #fbbc04;
+        }
+
+        .shoutout-team {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .shoutout-contribution {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        .ideas-card {
+            text-align: center;
+        }
+
+        .ideas-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .ideas-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 15px;
+        }
+
+        .ideas-button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Next Month Focus */
+        .focus-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .focus-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .focus-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+        }
+
+        .cloud-icon {
+            background-color: #4285f4;
+        }
+
+        .security-icon {
+            background-color: #34a853;
+        }
+
+        .focus-content {
+            flex-grow: 1;
+        }
+
+        .focus-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .focus-description {
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .feedback-section {
+            flex-grow: 1;
+        }
+
+        .feedback-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feedback-description {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 10px;
+        }
+
+        .feedback-button {
+            background-color: transparent;
+            border: 1px solid #5f6368;
+            color: #5f6368;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .social-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            position: relative;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            /* margin-left: 15px; */
+            color: #5f6368;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #5f6368;
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(135deg, rgb(251, 164, 157), rgb(0, 0, 134));
+            color: white;
+        }
+
+        .anchor {
+            display: inline-block;
+        }
+
+        .social-media-icons {
+            margin-right: 8px;
+            margin-left: 8px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+
+            .updates-grid,
+            .initiatives-grid,
+            .events-grid,
+            .community-grid,
+            .focus-items {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 2px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 7px;
+            color: #333;
+        }
+
+        .updates-grid {
+            display: grid;
+            /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+            gap: 20px;
+        }
+
+        .update-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .update-card.expanded {
+            grid-column: 1 / -1;
+        }
+
+        .update-icon {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .update-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .learn-more {
+            color: #007bff;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .expanded-content {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .update-card.expanded .expanded-content {
+            display: block;
+        }
+
+        .close-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #666;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .close-btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* .security-alert {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        position: relative;
+        transition: all 0.3s ease;
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+    } */
+
+        .security-alert.expanded {
+            grid-column: 1 / -1;
+            flex-direction: column;
+        }
+
+        /* .alert-icon {
+        font-size: 24px;
+        margin-right: 15px;
+    } */
+
+        .alert-content {
+            flex-grow: 1;
+        }
+
+        .alert-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        /* .alert-button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+    } */
+
+        /* Update existing styles to include security alerts */
+        .expanded-content {
+            display: none;
+            width: 100%;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .security-alert.expanded .expanded-content {
+            display: block;
+        }
+
+        .extend {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
+{{!-- body for email newsletter --}}
 
-
-
+{{!-- 
 
 <body>
     <div class="container">
@@ -626,7 +1378,7 @@
             <div class="newsletter-title">GCP Newsletter</div>
             <div class="issue-info">
                 Issue #{{issueNumber}}<br>
-                {{issuedate}}
+                {{issueDate}}
             </div>
         </div>
 
@@ -671,6 +1423,7 @@
                         <div class="event-description">{{description}}</div>
                         {{!-- <a href="{{link}}"
                             class="event-button {{#if isTraining}}training-button{{/if}}">{{buttonText}}</a> --}}
+                        {{!--
                     </div>
                     {{/each}}
                 </div>
@@ -715,8 +1468,8 @@
                 <div class="section-title">Leadership Message</div>
                 <div class="leadership-message">
                     <div class="leader-info">
-                        {{!-- <img src="https://avatars.slack-edge.com/2025-02-10/8440320241681_b1bee1b06a87b9d59ae0_72.png"
-                            alt="{{leadershipMessage.name}}" class="leader-avatar"> --}}
+                        <img src="https://avatars.slack-edge.com/2025-02-10/8440320241681_b1bee1b06a87b9d59ae0_72.png"
+                            alt="{{leadershipMessage.name}}" class="leader-avatar">
                         <div class="leader-name">{{leadershipMessage.name}}</div>
                     </div>
                     <div class="leader-quote">
@@ -749,7 +1502,7 @@
             </div>
 
             <!-- Next Month's Focus Section -->
-            {{!-- <div class="section">
+            <div class="section">
                 <div class="section-title">Next Month's Focus</div>
                 <div class="focus-items">
                     {{#each nextMonthFocus}}
@@ -760,7 +1513,7 @@
                         </div>
                     </div>
                     {{/each}}
-                </div> --}}
+                </div>
             </div>
         </div>
 
@@ -788,7 +1541,316 @@
             © {{currentYear}} Blue Altair GCP Newsletter. All rights reserved.
         </div>
     </div>
-</body> 
+</body> --}}
 
+
+{{!-- body for main newsletter --}}
+
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-logo">
+                <a href="https://www.bluealtair.com"><img class="logo"
+                        src="https://www.bluealtair.com/hubfs/Logo-ColorStar-WhiteText.svg" width="150"></a>
+            </div>
+            <div class="newsletter-title">GCP Newsletter</div>
+            <div class="issue-info">
+                Issue #{{issueNumber}}<br>
+                {{issuedate}}
+            </div>
+        </div>
+
+        <!-- Leadership Message Section -->
+        <div class="section">
+            <div class="section-title">Leadership Message</div>
+            <div class="leadership-message">
+                <div class="leader-info">
+                    <div class="leader-name">{{leadershipMessage.title}}</div>
+                </div>
+                <div class="leader-quote">
+                    "{{leadershipMessage.content}}"
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Updates Section -->
+        <div class="section">
+            <div class="section-title">Featured Updates & Announcements</div>
+            <div class="updates-grid">
+                {{#each featuredUpdates}}
+                <div class="update-card expandable">
+                    {{!-- <div class="update-icon"><span>{{add @index 1}}</span></div> --}}
+                    <div class="update-title">{{title}}</div>
+                    <div class="update-description">{{description}}</div>
+                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="expanded-content">
+                        <div class="close-btn" onclick="closeDetails()">Close</div>
+                        <h2>{{title}}</h2>
+                        <p>{{details}}</p>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Blue Altair's GCP Initiatives -->
+        <div class="section">
+            <div class="section-title">Blue Altair's GCP Initiatives</div>
+            <div class="initiatives-grid">
+                {{#each initiatives}}
+                <div class="initiative-card expandable">
+                    <img src="{{image}}" alt="{{title}}" class="initiative-image">
+                    <div class="initiative-content">
+                        <div class="extend" onclick="toggleDetails(this)">
+                            <div class="initiative-title">{{title}}</div>
+                            <div class="initiative-description">{{description}}</div>
+                        </div>
+                        <div class="expanded-content">
+                            <h2>{{title}}</h2>
+                            <p>{{details}}</p>
+                            <div class="close-btn" onclick="closeDetails()">Close</div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Security Updates Section -->
+        <div class="section">
+            <div class="section-title">Security Updates</div>
+            <div class="security-alert expandable">
+                <div class="alert-content">
+                    <div class="alert-title">{{securityUpdate.title}}</div>
+                    <div class="alert-description">{{securityUpdate.description}}</div>
+                    <button class="alert-button-view" id="view" onclick="toggleSecurityDetails(this)">View
+                        Details</button>
+                    <button class="alert-button-view" id="close" onclick="closeSecurityDetails(this)"
+                        style="display: none;">Close Details</button>
+                </div>
+                <div class="expanded-content">
+                    <h2>{{securityUpdate.title}} Details</h2>
+                    <p>{{securityUpdate.details}}</p>
+                    {{#if securityUpdate.keyChanges}}
+                    <p>Key changes include:</p>
+                    <ul>
+                        {{#each securityUpdate.keyChanges}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Insights Section -->
+        <div class="section">
+            <div class="section-title">Technical Insights</div>
+            <div class="tip-container">
+                <div class="tip-header">
+                    <div class="tip-icon">💡</div>
+                    <div class="tip-title">Tip of the Month</div>
+                </div>
+                <div class="tip-content">{{technicalTip}}</div>
+            </div>
+        </div>
+
+        <!-- Learning & Events Section -->
+        <div class="section">
+            <div class="section-title">Learning & Events</div>
+
+            <!-- Learnings Section -->
+            {{#if learnings.length}}
+            <div style="font-size: medium; font-family: nunito; font-style: italic; font-weight: bold;">🎓 Learnings:
+            </div>
+            <div class="events-grid">
+                {{#each learnings}}
+                <div class="event-card">
+                    <div class="event-title">{{title}}</div>
+                    <div class="event-description">{{description}}</div>
+                    <a href="{{link}}">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+
+            <!-- Events Section -->
+            {{#if events.length}}
+            <div
+                style="margin-top: 12px; font-size: medium; font-family: nunito; font-style: italic; font-weight: bold;">
+                🗓️ Events:
+            </div>
+            <div class="events-grid">
+                {{#each events}}
+                <div class="event-card">
+                    <div class="event-title">{{title}}</div>
+                    <div class="event-description">{{description}}</div>
+                    <a href="{{link}}">
+                        <div class="learn-more">View More</div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+
+        <!-- Certification Spotlight Section -->
+        <div class="section">
+            <div class="section-title">Certification Spotlight</div>
+            <div class="spotlight-container">
+                {{#each certifications}}
+                <div class="spotlight-card">
+                    <img src="{{image}}" alt="{{name}}" class="spotlight-avatar">
+                    <div class="spotlight-content">
+                        <div class="spotlight-name">{{name}}</div>
+                        <div class="spotlight-achievement">{{achievement}}</div>
+                        <div class="certified-date">
+                            <span class="star-icon">⭐</span> Certified: {{date}}
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Community & Collaboration Section -->
+        <div class="section">
+            <div class="section-title">Community & Collaboration</div>
+            <div class="community-grid">
+                {{#each shoutouts}}
+                <div class="community-card">
+                    <ul class="shoutouts-list">
+                        <li class="shoutout-item">
+                            <img src="{{image}}" alt="{{name}}" class="spotlight-avatar">
+                            <div>
+                                <div class="shoutout-team">{{name}}</div>
+                                <div class="shoutout-contribution">{{contribution}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Next Month's Focus Section -->
+        {{!-- <div class="section">
+            <div class="section-title">Next Month's Focus</div>
+            <div class="focus-items">
+                {{#each nextMonthFocus}}
+                <div class="focus-item">
+                    <div class="focus-icon {{iconClass}}">{{icon}}</div>
+                    <div class="focus-content">
+                        <div class="focus-title">{{title}}</div>
+                        <div class="focus-description">{{description}}</div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div> --}}
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="feedback-section">
+                <div class="feedback-title">Feedback & Suggestions</div>
+                <div class="feedback-description">{{feedbackText}}</div>
+                <a href="mailto:gcp.community@bluealtair.com">
+                    <button class="feedback-button">
+                        Provide Feedback
+                    </button>
+                </a>
+
+            </div>
+            <div class="social-section">
+                <div class="social-title">Stay Connected</div>
+                <div class="social-icons">
+                    {{#each socialLinks}}
+                    <div class="social-media-icons"><a class="anchor" href="{{url}}"><img src="{{image}}"
+                                class="social-icon"></a></div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            © {{currentYear}} Blue Altair GCP Newsletter. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // Your JavaScript functions here (same as in your HTML)
+        function toggleDetails(button) {
+            const container = button.closest('.expandable');
+            const wasExpanded = container.classList.contains('expanded');
+
+            // Close all expandable elements
+            document.querySelectorAll('.expandable').forEach(el => {
+                el.classList.remove('expanded');
+            });
+
+            // Open clicked element if it wasn't already expanded
+            if (!wasExpanded) {
+                container.classList.add('expanded');
+            }
+        }
+
+        function toggleSecurityDetails(button) {
+            const view = document.getElementById('view');
+            const close = document.getElementById('close');
+
+            if (close.style.display === "none") {
+                close.style.display = "block";
+            } else {
+                close.style.display = "none";
+            }
+
+            if (view.style.display === "none") {
+                view.style.display = "block";
+            } else {
+                view.style.display = "none";
+            }
+
+            const container = button.closest('.expandable');
+            const wasExpanded = container.classList.contains('expanded');
+
+            document.querySelectorAll('.expandable').forEach(el => {
+                el.classList.remove('expanded');
+            });
+
+            if (!wasExpanded) {
+                container.classList.add('expanded');
+            }
+        }
+
+        function closeDetails() {
+            document.querySelectorAll('.expandable').forEach(el => {
+                el.classList.remove('expanded');
+            });
+        }
+
+        function closeSecurityDetails(button) {
+            const close = document.getElementById('close');
+            const view = document.getElementById('view');
+            if (view.style.display === "none") {
+                view.style.display = "block";
+            } else {
+                view.style.display = "none";
+            }
+            if (close.style.display === "none") {
+                close.style.display = "block";
+            } else {
+                close.style.display = "none";
+            }
+            document.querySelectorAll('.expandable').forEach(el => {
+                el.classList.remove('expanded');
+            });
+        }
+    </script>
+</body>
 
 </html>
