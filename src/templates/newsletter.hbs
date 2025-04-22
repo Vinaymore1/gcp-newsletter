@@ -1598,7 +1598,9 @@
                         <div class="close-btn" onclick="closeDetails()">Close</div>
                         {{!-- <h2>{{title}}</h2> --}}
                         <p>{{details}}</p>
-                        <p>For more details &nbsp;<a href={{links}}>click here</a></p>
+                        {{#if links}}
+                        <p>For more details, <a href={{links}}>click here</a></p>
+                        {{/if}}
                     </div>
                 </div>
                 {{/each}}
