@@ -121,9 +121,9 @@
         .update-card {
             border: 1px solid #eaeaea;
             border-radius: 8px;
-            padding: 4px;
-            position: relative;
-            margin: 4px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
         }
 
         .update-icon {
@@ -145,30 +145,18 @@
 
         .update-title {
             font-weight: bold;
-            margin-bottom: 5px;
+            margin: 3px;
         }
 
         .update-description {
             font-size: 14px;
             color: #5f6368;
-            margin-bottom: 10px;
-        }
-
-        .learn-more {
-            color: #4285f4;
-            text-decoration: none;
-            font-size: 14px;
-            display: flex;
-            /* align-items: center; */
+            margin: 2px;
         }
 
         .learn-more:after {
             content: "›";
             margin-left: 5px;
-        }
-
-        .learn-more extend {
-            position: fixed;
         }
 
         /* Initiatives */
@@ -212,8 +200,7 @@
             color: #5f6368;
         }
 
-        .initiative-content .learn-more {
-            color: #007bff;
+        .initiative-content {
             cursor: pointer;
             margin-top: 15px;
             display: inline-block;
@@ -330,7 +317,9 @@
         .event-card {
             border: 1px solid #eaeaea;
             border-radius: 8px;
-            padding: 15px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
         }
 
         .event-icon {
@@ -351,7 +340,7 @@
         .event-description {
             font-size: 14px;
             color: #5f6368;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .event-button {
@@ -674,10 +663,17 @@
         }
 
         .learn-more {
-            color: #007bff;
-            cursor: pointer;
-            margin-top: 15px;
-            display: inline-block;
+            color: #4285f4;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            margin-top: 2px;
+        }
+
+        .view-more {
+            text-decoration: none;
+            font-size: 14px;
+            content: "›";
         }
 
         .expanded-content {
@@ -761,6 +757,16 @@
         .extend {
             cursor: pointer;
         }
+
+        .leadership{
+            display: flex;
+            align-items:end;
+            justify-content:right;
+        }
+
+        a{
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -780,19 +786,19 @@
             <div class="newsletter-title">GCP Newsletter</div>
             <div class="issue-info">
                 Issue #1<br>
-                April 2025
+                April&nbsp;2025
             </div>
         </div>
 
         <!-- Leadership Message Section -->
         <div class="section">
-            <div class="section-title">Leadership Message</div>
             <div class="leadership-message">
                 <div class="leader-info">
                     <div class="leader-name">Welcome to the first edition of Blue Altair&#x27;s Google Cloud Platform Community newsletter!</div>
                 </div>
                 <div class="leader-quote">
                     "As proud Google Cloud Partners, we have successfully delivered numerous projects leveraging GCP&#x27;s cutting-edge technologies. To strengthen this partnership, we emphasize continuous learning, certifications, and hands-on experience with real-world projects. This newsletter is designed to share valuable insights, foster collaboration, expand GCP product knowledge, highlight noteworthy blogs, offer training opportunities, and drive innovation within the GCP ecosystem. This month, we&#x27;ve packed in the latest trends, must-know updates, and a few surprises just for you. Whether you&#x27;re here for industry news, expert tips, or a dose of inspiration, there&#x27;s something for everyone!"
+                     <span class="leadership">~ Leadership Message</span>
                 </div>
             </div>
         </div>
@@ -803,97 +809,99 @@
             <div class="updates-grid">
                 <div class="update-card expandable">
                     <div class="update-title">Apigee Spaces</div>
-                    <div class="update-description">Identity-based isolation and grouping of API resources within an Apigee organization</div>
-                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="update-description">Identity-based isolation and grouping of API resources within an Apigee organization
+                        <br>
+                    <span class="learn-more extend" onclick="toggleDetails(this)">Learn more</span>
+                    </div>
                     <div class="expanded-content">
                         <div class="close-btn" onclick="closeDetails()">Close</div>
-                        <h2>Apigee Spaces</h2>
-                        <p>Apigee Spaces enables identity-based isolation and grouping of API resources within an Apigee organization. Apigee Spaces allows you to have granular IAM control over access to your API proxies, shared flows, and API products. Developers can create multiple Spaces within the same organization for different teams, development projects, or environments and set IAM controls for each Space. Any API resources created under a Space will inherit the IAM policies applied to that Space.
-For more details please refer to below link: 
-https://cloud.google.com/apigee/docs/api-platform/system-administration/spaces/apigee-spaces-overview</p>
+                        <p>Apigee Spaces enables identity-based isolation and grouping of API resources within an Apigee organization. Apigee Spaces allows you to have granular IAM control over access to your API proxies, shared flows, and API products. Developers can create multiple Spaces within the same organization for different teams, development projects, or environments and set IAM controls for each Space. Any API resources created under a Space will inherit the IAM policies applied to that Space.</p>
+                        <p>For more details &nbsp;<a href=https://cloud.google.com/apigee/docs/api-platform/system-administration/spaces/apigee-spaces-overview>click here</a></p>
                     </div>
                 </div>
                 <div class="update-card expandable">
                     <div class="update-title">Gemini Code Assist</div>
-                    <div class="update-description">AI-powered assistance to help development teams build, deploy, and operate apps throughout the sdlc</div>
-                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="update-description">AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle
+                        <br>
+                    <span class="learn-more extend" onclick="toggleDetails(this)">Learn more</span>
+                    </div>
                     <div class="expanded-content">
                         <div class="close-btn" onclick="closeDetails()">Close</div>
-                        <h2>Gemini Code Assist</h2>
                         <p>Gemini Code Assist offers AI-powered assistance to help development teams build, deploy, and operate applications throughout the software development lifecycle. Developers can use Gemini Code Assist in their IDE (such as VS Code, JetBrains IDEs like IntelliJ and PyCharm, or Android Studio) for AI-powered coding assistance in many popular languages. It provides code completions as developers write their code, generates full functions or code blocks from comments, generates unit tests, and assists with debugging, understanding, and documenting code.
-Gemini Code Assist provides contextualized responses to prompts, including source citations regarding which documentation and code samples it used to generate its responses.
-For more details please refer to below link: 
-https://cloud.google.com/gemini/docs/codeassist/overview</p>
+Gemini Code Assist provides contextualized responses to prompts, including source citations regarding which documentation and code samples it used to generate its responses.</p>
+                        <p>For more details &nbsp;<a href=https://cloud.google.com/gemini/docs/codeassist/overview>click here</a></p>
                     </div>
                 </div>
                 <div class="update-card expandable">
                     <div class="update-title">BigQuery ML Enhancements</div>
-                    <div class="update-description">New machine learning capabilities in BigQuery with TensorFlow integration.</div>
-                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="update-description">New machine learning capabilities in BigQuery with TensorFlow integration.
+                        <br>
+                    <span class="learn-more extend" onclick="toggleDetails(this)">Learn more</span>
+                    </div>
                     <div class="expanded-content">
                         <div class="close-btn" onclick="closeDetails()">Close</div>
-                        <h2>BigQuery ML Enhancements</h2>
-                        <p>BigQuery ML now supports advanced machine learning capabilities, including forecasting models and integration with TensorFlow. These enhancements allow data scientists and analysts to build and deploy predictive models directly within BigQuery, leveraging its scalable infrastructure for faster insights. Businesses can use these capabilities to make data-driven decisions, improve demand forecasting, and enhance AI-driven applications without requiring extensive machine learning expertise. The seamless integration with TensorFlow also enables the use of custom deep learning models, expanding the potential for sophisticated analytics and automation.
-For more details please refer to below link:
-https://cloud.google.com/bigquery/docs/bqml-introduction</p>
+                        <p>BigQuery ML now supports advanced machine learning capabilities, including forecasting models and integration with TensorFlow. These enhancements allow data scientists and analysts to build and deploy predictive models directly within BigQuery, leveraging its scalable infrastructure for faster insights. Businesses can use these capabilities to make data-driven decisions, improve demand forecasting, and enhance AI-driven applications without requiring extensive machine learning expertise. The seamless integration with TensorFlow also enables the use of custom deep learning models, expanding the potential for sophisticated analytics and automation.</p>
+                        <p>For more details &nbsp;<a href=https://cloud.google.com/bigquery/docs/bqml-introduction>click here</a></p>
                     </div>
                 </div>
                 <div class="update-card expandable">
                     <div class="update-title">Anywhere Cache</div>
-                    <div class="update-description">Accelerate GCS access using globally distributed caching infrastructure</div>
-                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="update-description">Accelerate GCS access using globally distributed caching infrastructure
+                        <br>
+                    <span class="learn-more extend" onclick="toggleDetails(this)">Learn more</span>
+                    </div>
                     <div class="expanded-content">
                         <div class="close-btn" onclick="closeDetails()">Close</div>
-                        <h2>Anywhere Cache</h2>
-                        <p>Anywhere Cache is a built-in performance optimization in Google Cloud Storage that reduces latency and improves read speeds by serving frequently accessed objects from cache nodes located across Google’s global edge and regional network. This means users and applications can access data faster, regardless of their geographical location. Unlike traditional CDNs, Anywhere Cache is natively integrated into GCS and doesn’t require separate configuration. It’s ideal for media streaming, global machine learning pipelines, analytics dashboards, and gaming workloads. While it offers significant performance gains, it’s designed for read-heavy workloads and doesn&#x27;t offer direct cache management.
-For more details please refer to below link:
-https://cloud.google.com/storage/docs/anywhere-cache</p>
+                        <p>Anywhere Cache is a built-in performance optimization in Google Cloud Storage that reduces latency and improves read speeds by serving frequently accessed objects from cache nodes located across Google’s global edge and regional network. This means users and applications can access data faster, regardless of their geographical location. Unlike traditional CDNs, Anywhere Cache is natively integrated into GCS and doesn’t require separate configuration. It’s ideal for media streaming, global machine learning pipelines, analytics dashboards, and gaming workloads. While it offers significant performance gains, it’s designed for read-heavy workloads and doesn&#x27;t offer direct cache management.</p>
+                        <p>For more details &nbsp;<a href=https://cloud.google.com/storage/docs/anywhere-cache>click here</a></p>
                     </div>
                 </div>
                 <div class="update-card expandable">
                     <div class="update-title">Cloud Storage Cost Optimization</div>
-                    <div class="update-description">Google Cloud Storage offers cost optimization features like Object Lifecycle ..</div>
-                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="update-description">Google Cloud Storage offers cost optimization features like Object Lifecycle ..
+                        <br>
+                    <span class="learn-more extend" onclick="toggleDetails(this)">Learn more</span>
+                    </div>
                     <div class="expanded-content">
                         <div class="close-btn" onclick="closeDetails()">Close</div>
-                        <h2>Cloud Storage Cost Optimization</h2>
-                        <p>Google Cloud Storage offers features to optimize costs, such as Object Lifecycle Management, which automates actions like setting Time to Live (TTL) or transitioning objects to cheaper storage classes. Coldline and Archive Storage provide significant savings for infrequently accessed data, though with longer retrieval times. Additionally, Efficient Data Compression reduces storage space, helping organizations further cut costs while maintaining scalability.
-For more details please refer to below link:
-https://cloud.google.com/architecture/framework/cost-optimization</p>
+                        <p>Google Cloud Storage offers features to optimize costs, such as Object Lifecycle Management, which automates actions like setting Time to Live (TTL) or transitioning objects to cheaper storage classes. Coldline and Archive Storage provide significant savings for infrequently accessed data, though with longer retrieval times. Additionally, Efficient Data Compression reduces storage space, helping organizations further cut costs while maintaining scalability.</p>
+                        <p>For more details &nbsp;<a href=https://cloud.google.com/architecture/framework/cost-optimization>click here</a></p>
                     </div>
                 </div>
                 <div class="update-card expandable">
                     <div class="update-title">Vertex AI Agent Builder</div>
-                    <div class="update-description">Build and deploy enterprise ready generative AI experiences</div>
-                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="update-description">Build and deploy enterprise ready generative AI experiences
+                        <br>
+                    <span class="learn-more extend" onclick="toggleDetails(this)">Learn more</span>
+                    </div>
                     <div class="expanded-content">
                         <div class="close-btn" onclick="closeDetails()">Close</div>
-                        <h2>Vertex AI Agent Builder</h2>
-                        <p>Vertex AI Agent Builder offers enterprise-grade security and governance controls, ensuring AI agents are deployed within a secure, compliant framework. It integrates Google Cloud’s Identity and Access Management (IAM), robust data encryption (both at rest and in transit), and comprehensive monitoring capabilities via Cloud Monitoring to safeguard sensitive information. Businesses can customize AI models while adhering to industry regulations, facilitated by Google Cloud’s compliance tools and private AI capabilities.
-For more details please refer to below link:
-https://cloud.google.com/products/agent-builder</p>
+                        <p>Vertex AI Agent Builder offers enterprise-grade security and governance controls, ensuring AI agents are deployed within a secure, compliant framework. It integrates Google Cloud’s Identity and Access Management (IAM), robust data encryption (both at rest and in transit), and comprehensive monitoring capabilities via Cloud Monitoring to safeguard sensitive information. Businesses can customize AI models while adhering to industry regulations, facilitated by Google Cloud’s compliance tools and private AI capabilities.</p>
+                        <p>For more details &nbsp;<a href=https://cloud.google.com/products/agent-builder>click here</a></p>
                     </div>
                 </div>
                 <div class="update-card expandable">
                     <div class="update-title">New Feature Release: Cloud Run for Anthos</div>
-                    <div class="update-description">Introducing advanced capabilities for containerized applications.</div>
-                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="update-description">Introducing advanced capabilities for containerized applications.
+                        <br>
+                    <span class="learn-more extend" onclick="toggleDetails(this)">Learn more</span>
+                    </div>
                     <div class="expanded-content">
                         <div class="close-btn" onclick="closeDetails()">Close</div>
-                        <h2>New Feature Release: Cloud Run for Anthos</h2>
                         <p>BigQuery ML now supports advanced machine learning capabilities, including forecasting models and integration with TensorFlow. These enhancements allow data scientists and analysts to build and deploy predictive models directly within BigQuery, leveraging its scalable infrastructure for faster insights. Businesses can use these capabilities to make data-driven decisions, improve demand forecasting, and enhance AI-driven applications without requiring extensive machine learning expertise. The seamless integration with TensorFlow also enables the use of custom deep learning models, expanding the potential for sophisticated analytics and automation.</p>
+                        <p>For more details &nbsp;<a href=>click here</a></p>
                     </div>
                 </div>
                 <div class="update-card expandable">
-                    <div class="update-title">Agent-2-Agent communication</div>
-                    <div class="update-description">An interoperability protocol that enables AI agents to communicate and collaborate seamlessly</div>
-                    <div class="learn-more extend" onclick="toggleDetails(this)">Learn more</div>
+                    <div class="update-title">Agent 2 Agent communication Open source</div>
+                    <div class="update-description">An interoperability protocol that enables AI agents to communicate and collaborate seamlessly
+                        <br>
+                    <span class="learn-more extend" onclick="toggleDetails(this)">Learn more</span>
+                    </div>
                     <div class="expanded-content">
                         <div class="close-btn" onclick="closeDetails()">Close</div>
-                        <h2>Agent-2-Agent communication</h2>
-                        <p>Agent2Agent (A2A) is an interoperability protocol designed to enable seamless communication and collaboration between AI agents, regardless of their underlying framework or vendor. It simplifies the development of complex, multi-agent systems by supporting structured interactions. Key capabilities include capability discovery through standardized JSON-based agent cards, task management protocols for efficient coordination, and dynamic collaboration through message, context, and artifact exchange. A2A has gained significant industry traction, with over 50 partners such as Atlassian, Salesforce, MongoDB, and ServiceNow backing the initiative. This growing adoption highlights the industry&#x27;s commitment to building interoperable and scalable AI ecosystems.
-For more details please refer to below link:
-https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/</p>
+                        <p>Agent2Agent (A2A) is an interoperability protocol designed to enable seamless communication and collaboration between AI agents, regardless of their underlying framework or vendor. It simplifies the development of complex, multi-agent systems by supporting structured interactions. Key capabilities include capability discovery through standardized JSON-based agent cards, task management protocols for efficient coordination, and dynamic collaboration through message, context, and artifact exchange. A2A has gained significant industry traction, with over 50 partners such as Atlassian, Salesforce, MongoDB, and ServiceNow backing the initiative. This growing adoption highlights the industry&#x27;s commitment to building interoperable and scalable AI ecosystems.</p>
+                        <p>For more details &nbsp;<a href=https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/>click here</a></p>
                     </div>
                 </div>
             </div>
@@ -911,7 +919,6 @@ https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/</p
                             <div class="initiative-description">A new Python-based Apigee migration accelerator to support cross-platform data migration across different Apigee environments</div>
                         </div>
                         <div class="expanded-content">
-                            <h2>Blue Lab project - Apigee Migration Accelerator</h2>
                             <p>A new Python-based Apigee migration accelerator to support cross-platform data migration across different Apigee environments, including Edge to Hybrid and Hybrid to Hybrid. The tool provides end-to-end support for exporting data from the source organization, importing it into the target organization, and generating detailed reports based on the downloaded data. It is designed to streamline the migration process while maintaining consistency and traceability across environments</p>
                             <div class="close-btn" onclick="closeDetails()">Close</div>
                         </div>
@@ -925,7 +932,6 @@ https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/</p
                             <div class="initiative-description">Demonstrate the process of deploying an API proxy on Apigee using Cloud Build and a GitLab repository..</div>
                         </div>
                         <div class="expanded-content">
-                            <h2>Blue Lab project - CICD pipeline for Apigee API Proxy deployment</h2>
                             <p>In this proof of concept (POC), we aim to demonstrate the process of deploying an API proxy on Apigee using Cloud Build and a GitLab repository. The solution leverages a configuration JSON file to capture inputs, streamlining the deployment process. Additionally, an approval mechanism has been integrated, ensuring that the deployment is triggered only after the necessary build approval is granted. This POC not only enhances deployment efficiency but also adds an extra layer of control and security, maintaining high-quality standards throughout the process.</p>
                             <div class="close-btn" onclick="closeDetails()">Close</div>
                         </div>
@@ -939,7 +945,6 @@ https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/</p
                             <div class="initiative-description">Implementing comprehensive security measures using Google&#x27;s security primitives and best practices.</div>
                         </div>
                         <div class="expanded-content">
-                            <h2>GCP Newsletter Hosting on GCP Cloud Run</h2>
                             <p>GCP Newsletter Hosting on GCP Cloud Run is a cutting-edge initiative focused on enhancing cloud security using Google&#x27;s industry-leading security primitives. This framework is designed to help enterprises implement end-to-end security measures, including zero-trust architectures, advanced encryption mechanisms, and threat detection systems. By incorporating IAM (Identity and Access Management), VPC Service Controls, and security policy enforcement, organizations can protect sensitive data, mitigate risks, and ensure compliance with regulatory requirements. GCP Newsletter Hosting on GCP Cloud Run also integrates AI-driven anomaly detection and automated security incident response, ensuring robust protection against evolving cyber threats.</p>
                             <div class="close-btn" onclick="closeDetails()">Close</div>
                         </div>
@@ -980,7 +985,7 @@ https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/</p
             <div class="tip-container">
                 <div class="tip-header">
                     <div class="tip-icon">💡</div>
-                    <div class="tip-title">Tip of the Month</div>
+                    <div class="tip-title">Try This!</div>
                 </div>
                 <div class="tip-content">Optimize your Cloud Storage costs with these best practices. Implementing lifecycle policies can automatically transition objects to lower-cost storage classes or delete them when they&#x27;re no longer needed.</div>
             </div>
@@ -996,45 +1001,57 @@ https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/</p
             <div class="events-grid">
                 <div class="event-card">
                     <div class="event-title">Google Cloud Arcade</div>
-                    <div class="event-description">A gamified, free learning platform for Google Cloud...</div>
+                    <div class="event-description">A gamified, free learning platform that helps individuals enhance their technical skills related to Google Cloud
+                        <br>
                     <a href="https://go.cloudskillsboost.google/arcade?utm_source&#x3D;qwiklabs&amp;utm_medium&#x3D;lp&amp;utm_campaign&#x3D;old-site">
                         <div class="learn-more">View More</div>
                     </a>
+                    </div>
                 </div>
                 <div class="event-card">
                     <div class="event-title">Enhancing Your API Lifecycle With Artificial Intelligence</div>
-                    <div class="event-description">This blog will throw light on the impact ...</div>
+                    <div class="event-description">This blog will throw light on the impact ...
+                        <br>
                     <a href="https://www.bluealtair.com/blog/enhancing-your-api-lifecycle-with-artificial-intelligence">
                         <div class="learn-more">View More</div>
                     </a>
+                    </div>
                 </div>
                 <div class="event-card">
                     <div class="event-title">Amplifying the Power of Google Ads with BigQuery</div>
-                    <div class="event-description">Integrating Google Ads data with BigQuery...</div>
+                    <div class="event-description">Integrating Google Ads data with BigQuery...
+                        <br>
                     <a href="https://www.bluealtair.com/blog/amplifying-the-power-of-google-ads-with-bigquery">
                         <div class="learn-more">View More</div>
                     </a>
+                    </div>
                 </div>
                 <div class="event-card">
                     <div class="event-title">Redefining Connectivity with Google Cloud&#x27;s Application Integration</div>
-                    <div class="event-description">Google now has an answer with ...</div>
+                    <div class="event-description">Google now has an answer with ...
+                        <br>
                     <a href="https://www.bluealtair.com/blog/google-cloud-application-integration-solutions">
                         <div class="learn-more">View More</div>
                     </a>
+                    </div>
                 </div>
                 <div class="event-card">
                     <div class="event-title">Google Cloud Datasheet: Blue Altair</div>
-                    <div class="event-description">Google Cloud services enable enterprises ...</div>
+                    <div class="event-description">Google Cloud services enable enterprises ...
+                        <br>
                     <a href="https://www.bluealtair.com/hubfs/New%20Site%202023/Documents/Blue%20Altair%20-%20Google%20Cloud%20Partner%20Datasheet.pdf?hsLang&#x3D;en">
                         <div class="learn-more">View More</div>
                     </a>
+                    </div>
                 </div>
                 <div class="event-card">
                     <div class="event-title">Apigee Datasheet: Blue Altair</div>
-                    <div class="event-description">Apigee is a key driver for expediting ...</div>
+                    <div class="event-description">Apigee is a key driver for expediting ...
+                        <br>
                     <a href="https://www.bluealtair.com/hubfs/New%20Site%202023/Documents/Blue%20Altair%20-%20Apigee%20Partner%20Datasheet.pdf?hsLang&#x3D;en">
                         <div class="learn-more">View More</div>
                     </a>
+                    </div>
                 </div>
             </div>
 
@@ -1045,39 +1062,31 @@ https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/</p
             </div>
             <div class="events-grid">
                 <div class="event-card">
-                    <div class="event-title">Generative AI training:Live</div>
-                    <div class="event-description">These stand-alone classes are ...</div>
+                    <div class="event-title">Gen AI training:Live</div>
+                    <div class="event-description">These stand-alone classes are...
+                        <br>
                     <a href="https://rsvp.withgoogle.com/events/partner-learning/gen-ai-schedule">
-                        <div class="learn-more">View More</div>
+                        <span class="learn-more">View More</span>
                     </a>
+                    </div>
                 </div>
                 <div class="event-card">
                     <div class="event-title">Best of Next &#x27;25</div>
-                    <div class="event-description">Google Cloud&#x27;s global flagship moment ..</div>
+                    <div class="event-description">Google Cloud&#x27;s global flagship moment ..
+                        <br>
                     <a href="https://cloudonair.withgoogle.com/events/apac-best-of-next25?utm_campaign&#x3D;FY25-Q1-APAC-APA32178-onlineevent-er-best-of-next-25-24145&amp;utm_medium&#x3D;email&amp;utm_source&#x3D;partner&amp;utm_content&#x3D;apac_bon25_invite_partner_internal&amp;utm_content&#x3D;&amp;mkt_tok&#x3D;ODA4LUdKVy0zMTQAAAGZjkTnJG0L5l9b5gSb3dxJmOLROdyR9GfoJUwjLHdZPdmB0xxVKf0Y635fwruGtBMrMC28UMOqmtrfU5dTdU2bvyTdHy9Xa9qC6VW4IQm5JGZfuVZOZGI">
-                        <div class="learn-more">View More</div>
+                        <span class="learn-more">View More</span>
                     </a>
+                    </div>
                 </div>
                 <div class="event-card">
                     <div class="event-title">Live Classes-Partner CA</div>
-                    <div class="event-description">Google Certification live Classes for ...</div>
+                    <div class="event-description">Google Certification live Classes for ...
+                        <br>
                     <a href="https://rsvp.withgoogle.com/events/partner-learning/partner-certification-academy?utm_source&#x3D;quarterly+subscriber+newsletter&amp;utm_medium&#x3D;RSVP&amp;utm_campaign&#x3D;Q22024">
-                        <div class="learn-more">View More</div>
+                        <span class="learn-more">View More</span>
                     </a>
-                </div>
-                <div class="event-card">
-                    <div class="event-title">Microsoft Azure Virtual Training Day</div>
-                    <div class="event-description">Adapt your skills and master the tools ...</div>
-                    <a href="https://msevents.microsoft.com/event?id&#x3D;1148586904">
-                        <div class="learn-more">View More</div>
-                    </a>
-                </div>
-                <div class="event-card">
-                    <div class="event-title">AWS Discovery Days</div>
-                    <div class="event-description">Kickstart your cloud journey with AWS ...</div>
-                    <a href="https://meeting.zoho.com/meeting/register?sessionId&#x3D;1061898686">
-                        <div class="learn-more">View More</div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
